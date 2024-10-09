@@ -1,0 +1,798 @@
+1.8.4.7
+Changes:
+	- Added new API provider: Appcast (https://www.appcast.io/)
+	- Removed provider: Krop (no longer provides RSS feeds)
+
+fixes:
+	- API Key for 'The Muse' provider not being saved correctly
+
+1.8.4.6.2
+fixes:
+	- Some users getting a fatal error on plugin activation, or running schedules
+
+1.8.4.6.1
+fixes:
+	- Schedules not working on templates that don't have any custom field mappings
+
+1.8.4.6
+changes:
+	- Added 'AdZuna' eligibility check, for 'AdZuna' API applications
+	- Add 'JOB DATE' as an assignable mapping field
+
+fixes:
+	- PHP warnings
+
+1.8.4.5.1
+changes:
+	- (SourceStack) New 'Must Provide Logo' filter, to allow only importing jobs that contain company logo
+	- Better handling of complex RSS feed URL's when saving/loading templates
+
+fixes:
+	- (SourceStack) Templates not being saved correctly
+
+1.8.4.5
+changes:
+	- Added new option 'Upload Company Logos' to allow uploading company logos to the media library
+	- Flag 'Remotive' as supporting full job descriptions
+
+fixes:
+	- Keywords filtering on Schedules not working as expected
+	- Smart assign not always working as expected
+	- PHP warnings
+
+1.8.4.4
+changes:
+	- Updated SourceStack internal filtering for better results
+
+fixes:
+	- Fatal error when pulling full job descriptions using CV-Library API, when job ID is not found
+	- XML files containing nodes with multiple child nodes not being properly loaded
+	- PHP warnings when using the 'jobs' shortcode related with uninitialized vars
+	- SQL error being triggered on some specific situations when the dynamic title query is missing
+
+1.8.4.3
+changes:
+	- (SourceStack) Use SourceStack's URL request structure for the feed builder
+
+fixes:
+	- (SourceStack) Country filter not working as expected
+	- Keywords filtering not always working as expected
+	- Keywords filtering applied whenever positive/negative keywords were filled, even if the checkbox 'Include/Exclude jobs based on their keywords' was unchecked
+
+1.8.4.2
+changes:
+	- (SourceStack) prefer job descriptions HTML
+	- (SourceStack) improve internal filtering
+
+fixes:
+	- Some invalid image URL's showing because of invalid spaces
+	- Schedules sometimes failing due to missing dependencies
+	- Setting an empty jobs duration causing jobs to not show on frontend (wpjm only)
+
+1.8.4.1
+changes:
+	- Added support for XML files that use generic <Field> tags identified by the 'name' attribute
+
+fixes:
+	- Custom mapping of job title causing duplicates jobs
+	- Sample table remote/featured fields were switched internally
+
+1.8.4
+changes:
+	- Added new multi-country provider: WhatJobs
+	- (SourceStack) Updated job categories list
+	- (SourceStack) Added 'Region' option to filters
+	- (AdZuna) Added two new filters: Keywords Comparison and Job Type
+	- (JazzHR) Updated instructions to find job board code and removed unused 'subdomain' setting
+	- Added new 'Paragraph Line Breaks' option
+	- Better job descriptions formatting
+
+fixes
+	- (JazzHR) Using wrong API URL parameters
+	- HTML tag being added to job descriptions
+
+1.8.3
+changes:
+	- Introduce new partner API provider: SourceStack (https://sourcestack.co/)
+	- Added support for new 'template' parameter on shortcodes (allow displaying jobs from specific templates)
+
+1.8.2.2
+fixes
+	- Fatal error occurring on some specific XML files structures
+	- Security issue with Freemius SDK
+	- Shortcode with parameters not working correctly
+
+1.8.2.1
+fixes
+	- Fields missing on some providers feeds
+	- Image placeholder showing when company logo not available
+	- Fatal error being thrown for some users, when sanitizing mappings
+
+1.8.2
+changes
+	- Better handling of complex XML files
+	- Added estimated 'next run time' to schedules
+	- Added new parameter 'country' to [gofj_jobs] shortcode (allows listing jobs from specific countries) - (applied to new jobs only - WPJM only)
+	- Added country search support for imported jobs, from a multi-region pre-set provider (applied to new jobs only - WPJM only)
+	- Selecting a category for AdZuna API is now optional
+	- Display alert when there are unmapped core fields
+	- Display missing required URL parameters when loading a feed from a pre-set provider
+	- Display missing API fields when loading an API feed from a pre-set provider
+	- Introduce new option for defaulting imported job dates to the feed date (default) or the current date
+	- Added support for WPJM's new Remote positions option
+	- Added new filters to allow overriding tags on custom xml files
+	- Removed provider: https://jobsearch.monster.com.hk - changed name, no longer provides RSS feeds
+	- Removed provider: https://www.jobs.ac.uk - no longer provides RSS feeds
+	- Removed provider: https://www.indeed.com - no longer provides RSS feeds
+	- Removed 'OpenGraph' dependency
+	- Updated Freemius SDK
+
+fixes
+	- AdZuna results limits and pagination not working as expected (returning only 10 results when limit not specified)
+	- Updated 'The Guardian Jobs' parsing rules. Fixes some missing metadata.
+	- 'SalesJobs' feed URL sometimes being replaced by a different provider feed URL
+	- PHP warnings on PHP 8.0
+
+1.8.1.2
+changes
+	- Better handling of complex XML files that use attributes in tags
+	- Updated AdZuna logo asset
+	- Auto disable free version of the plugin when installing paid version
+
+fixes
+	- Job page not displaying properly when using 'WP Job Manager - Resume Manager' plugin
+	- Fatal error when using plugins that use the 'wp_kses_allowed_html' filter (i.e: Breadcrumbs NavXT)
+	- Extra comma causing fatal error on old PHP versions
+	- Guided tutorial showing during Freemius opt-in
+
+1.8.1.1
+changes
+	- Added support for loading custom XML feeds from CV-Library  (e.g: https://www.cv-library.co.uk/cgi-bin/feed.xml?)
+	- Display info box when feed does not provide full job descriptions
+
+fixes
+	- Error 'change_job_manager_delete_expired_jobs_days' already declared
+	- Schedules page, not properly rendering the fields, on new schedules
+	- Templates for multi-country providers not correctly saving the selected country
+	- Missing 'locale_code' parameter on Careerjet API URL
+	- Anchor attributes being stripped from content
+
+1.8.1
+changes
+	- Introduce new RSS feed provider for remote jobs - euroremotejobs.com
+	- Deprecated Indeed's RSS feed since Indeed is now actively blocking all http requests to the feed
+	- Added support for loading gzipped XML files (on Professional and Business plans)
+	- Added more visibility to new Go Fetch Jobs partner providers
+	- Grouped partners on dedicated groups, on the providers dropdown
+
+fixes
+	- Sample table being automatically hidden after loading a XML/JSON file
+	- PHP warnings showing up on some situations
+
+1.8.0
+changes
+	- Added support for filling the new WPJM 'Salary' field, when available
+	- Added support for scraping 'Salary' if available on the provider page (pre-set providers only)
+	- Added option to auto scrape full job description, to settings page
+	- Added option to hide the job source on job pages, to the settings page
+	- Added option to select all/unselect all scrape fields, on import page
+	- Added support for 'MAS Companies for WP Job Manager' plugin (auto populates job Company dropdown)
+	- Added new option to redirect users to application URL, on click, instead of displaying application URL (WPJM only)
+	- Added randomized headers for better scraping
+	- Added additional retries for providers that sometimes return invalid content
+	- Updated all pre-set providers to pull in as much metadata as possible
+	- Auto cleanup job titles that contain additional metadata information (for select providers) (i.e: "Sales Manager - Google - Mountain View" converts to "Sales Manager")
+	- Introduce new multi-region RSS provider: https://www.jobmonkeyjobs.com
+	- Removed 'Search Embed Logos' option (ignored by most providers)
+	- Removed 'remotive.io' RSS provider due to limited content and metadata
+	- Removed 'stackoverflow jobs' since it was discontinued
+	- Removed 'github jobs' since it was discontinued
+
+fixes
+	- Database error being thrown when using custom table prefixes
+	- Schedules not honoring the settings start time
+	- Country not being auto-loaded, for 'Indeed France' templates
+	- Application details showing when 'Apply for Job' click was set to redirect
+	- 'Read More' showing for some jobs with full job descriptions
+
+1.7.3.2.5
+fixes
+	- Import button not working (Free version only)
+
+1.7.3.2.4
+fixes:
+	- Security fixes
+
+1.7.3.2
+changes:
+	- Added new API provider: https://www.themuse.com/jobs (Optional API Key)
+	- Added new API provider: https://www.workingnomads.com/jobs (no API key required)
+	- Added option to automatically create schedules during import, is now available, after creating a new template
+	- Removed GitHub API (no longer available)
+	- Added support for filtering jobs within all available feed fields
+
+fixes:
+	- Multiple selection options displaying as checkboxes, on the settings page
+	- Fields on more complex XML files not read correctly
+
+1.7.3.1
+changes:
+	- Added full scraping functionality to Remotive.io provider
+	- Better handling of JSON files with more than one parent node
+
+fixes:
+	- HTML tags being stripped from job descriptions when mapping non-standard <description> tags
+	- Shortcode not filtering imported jobs
+	- AdZuna import pagination not working
+	- Some JSON/XML sources being displayed on the single job page
+
+1.7.3
+changes:
+	- Introduce new RSS provider: remotive.io (remote jobs)
+	- Introduce new API provider: remotive.io (remote jobs) - free to use on Professional/Business plans - no API key required
+	- Introduce new API provider: JobtomeAds (multi-region, multi-industries jobs)
+	- Introduce new option to set default/placeholder company logo for imported jobs without a logo
+	- Introduce new option to replace existing jobs from the same feed
+	- Better handling of XML nodes
+	- Better handling of unique logo filenames
+	- Better formatting of job descriptions
+	- Removed scraping options for Jooble API (no longer supported by Jooble)
+
+fixes:
+	- Use alternative 'mb_convert_encoding()' helper, in case PHP extension is not installed
+	- Override WP 'wpautop()' to avoid removing line breaks from job descriptions
+	- Careerjet scraper not pulling the correct metadata
+	- Taxonomy field mappings not being honored when mapped to an empty field
+	- Taxonomy field not defaulting to the default term, when mapped and content was empty
+	- Templates being loaded twice (internally)
+	- Extra double quote on GOFJ stats logo causing logo failing to display
+
+1.7.2.1.1
+fixes:
+	- Javsacript issues causing unexpected behavior
+
+1.7.2.1
+changes:
+	- Added support for auto-deleting expired jobs
+	- Allow filtering job import authors list
+	- Added support for scraping lazyloaded logos
+	- Use json_decode()/json_decode() as primary option for loading XML strings (provides wider XML support)
+
+fixes:
+	- Talent.com RSS feeds being wrongly indentified as Talent.com API feeds
+
+1.7.2
+changes:
+	- Added support for JazzHR ATS (Business plans only)
+	- Added 'Colombia' to Careerjet's API list of countries
+
+fixes:
+	- Possible mismatched company logos when using providers that re-use the company logo filename (ex: logo.gif)
+
+1.7.1.1.1
+fixes:
+	- Double forward slashes on feeds query strings, being replaced by a single forward slash
+	- Location empty when using 'Astoundify Job Manager Regions' plugin
+
+1.7.1.1
+changes:
+	- added 'Job Category' field for AdZuna, on the feed builder
+	- better JSON files support
+
+fixes:
+	- DivisonByZero error when the 'Paragraphs Rule' settibg was set to 0
+
+1.7.1
+changes:
+	- Added provider logos to the respective API/ATS settings page
+	- Added support for new API provider: Adzuna
+	- Added support for ATS providers (Business plans only): Greenhouse and Recruitee
+	- Renamed 'Providers' menu item to 'API Providers'
+
+fixes:
+	- Simple structured XML files not loading correctly
+	- (JobCareer theme) default fields could cause jobs to not display
+	- (Cariera theme) Do now fill application URL field, if job application contains an email
+
+1.7.0.4
+changes:
+	- Allow selecting which XML tag that is mapped to the company logo field
+	- Added support for XML files with nested nodes
+	- Hide import type toggle during job fetching
+
+fixes;
+	- (Cariera theme) Alternative application field not being auto-filled
+	- Internal PHP warnings being generated during scheduled imports
+
+1.7.0.3
+changes:
+	- Added new remote jobs provider: Jobicy.com
+	- Removed provider: careerjet.com. No longer provides RSS feeds
+
+fixes:
+	- Job titles with amperstands (&) not being caught during duplicates check
+	- XML files with multi-level deep nested nodes not being properly loaded
+	- File/URL picker not being correctly toggled internally
+
+1.7.0.2.2
+fixes:
+	- Critical 'wp_robots_noindex()' error
+
+1.7.0.2.1
+fixes:
+	- Critical errors related with invalid 'wp_robots_no_robots()' calls
+
+1.7.0.2
+fixes:
+	- Custom XML imports showing invalid mappings when they contained non-nested nodes
+	- Replaced deprecated 'wp_no_robots()' calls with 'wp_robots_no_robots()'
+	- Duplicate check on jobs containing quotes in the title could fail
+
+1.7.0.1
+changes:
+	- Added full for support for Cariera WPJM theme (https://themeforest.net/item/cariera-job-board-wordpress-theme/20167356)
+	- Updated Careerjet API scrapper
+
+fixes:
+	- Keyword matching not being applied to scraped full job description
+	- Duplicate jobs showing up with some language codes
+	- Keyword matching not being applied to scraped full job description
+
+1.7.0
+changes:
+	- Added support for loading custom XML files (Professional and Business plans only)
+	- Added support for loading custom JSON files (Professional and Business plans only)
+	- Added support for loading local XML and JSON files (Professional and Business plans only)
+	- Reritten duplicates checker algorithm for faster and more accurate results
+	- Reviewed and updated all providers
+	- Added 'HigherEdJobs' provider
+	- Added 'CrunchBoard' provider
+	- Removed 'Update' option from 'Duplicates Behavior' - it was not reliable
+	- Removed 'JobsInNenya' provider - no longer provides RSS feeds
+	- Removed 'CraigsList' provider - no longer provides RSS feeds
+	- Removed 'AdView' API provider (no longer available)
+
+fixes:
+	- 'Monster' jobs descriptions scraper generating duplicate descriptions
+	- Some company logos displaying as empty images
+	- Feeds pagination
+
+1.6.7.1
+changes:
+	- Updated Nuevoo's API (now Talent.com)
+	- Removed canonical links option (no longer used)
+
+fixes:
+	- Old schedules still using daily recurrence instead of hourly (hourly schedules would not run)
+	- Some funcionality, like updating jobs with additional metadata, not running on schedules
+	- Feeds that provide pagination, failing to retrieve more jobs than the pre-set limit, when keywords or locations were missing
+
+1.6.7
+changes:
+	- Apply smart assign terms matching to 'location' and 'company' fields, if available
+	- Moved provider tabs to new 'Providers' menu item (Professional and Business plans)
+
+1.6.6.1
+changes:
+	- Look for duplicate jobs inside feeds
+
+fixes:
+	- Some jobs being duplicated during feed pagination
+
+1.6.6
+changes:
+	- Introduce new RSS feed provider: https://remotewoman.com/
+	- Introduce new Ideas / Suggestions page
+	- Updated Jobs2Careers to Talroo
+	- Added logo support to Talroo
+	- Temporarily disabled ZipRecruiter (to be re-added on a future update)
+	- Ignore expiry date when saving template settings
+	- Importer page UI changes
+
+fixes:
+	- Expiration duration not being honored on saved tempaltes
+	- HTML tags not being properly encoded and showing up on job descriptions
+	- Duplicate jobs being imported when selecting 'Update' on 'Duplicates Behavior' option
+	- Invalid Craigslist region domains
+	- Company logo URL's containing the host name but no http scheme not being correctly returned
+
+1.6.5
+changes:
+	- Added country/state selector for multi-region providers: Indeed, Careerjet, Neuvoo, Jooble and Craigslist. It's now easier then ever to choose your Country feed.
+	- Added support for Jooble API (available in 70 countries!)
+	- Added support for JuJu API (over 5,500,000 jobs available!)
+	- Added support for choosing specific country feeds, on multi-country providers (e.g: indeed, jooble, etc)
+	- Added support for editing saved templates using the feed builder (applicable only for new templates)
+	- Introduce new 'Smart Assign > Create Terms' setting to  enable/disable automatically creation of terms, when using 'Smart Assign'
+	- Reduce feed cache duration when 'Duplicates Behavior' is set to 'Update', to make sure feed data is fresh
+	- Removed 'AdView API aka WhatJobs' since it no longer provides API or RSS feeds
+
+fixes:
+	- New terms being automatically created when mapping a taxonomy field
+	- Reduce importer cache duration to avoid duplicates being created
+
+1.6.4.3
+fixes:
+	- Importer incorrectly creating duplicate jobs (regression)
+
+1.6.4.2
+fixes:
+	- Schedule page not reloading after a test or manual run
+
+1.6.4.1
+changes:
+	- Added link to feed generator website: https://rss.app/ on import page
+	- Added nopener noreferrer to external links
+	- Added support for AND/OR comparisons on Postive/Negative keywords filtering
+	- Better handling of Negative/Positive keywords filtering
+
+fixes:
+	- Duplicate jobs being created if the same jobs were found with different content
+	- CV-Library feed builder fields not showing up
+
+1.6.4
+changes:
+	- Added new API provider: 'jobs.github.com/api'
+	- Added new RSS providers: 'whatjobs.com', 'creativejobscentral.com', 'healthcareercenter.com', 'hospitalcareers.com'
+	- Added new RSS providers: 'jobsinkenya.co.ke (Jobs in Kenya)',' myjobmag.com (Jobs in Ghana, Kenya, Nigeria and South Africa)'
+	- Removed provider 'mediabistro.com' (no longer providers RSS feeds)
+	- Added support for full-descriptions, on 'CV-Library' provider
+	- Added support for 'searchon' option to search keywords by title or employes name, on 'Neuvoo' provider
+	- Added support for 'all' option on job type (sponsored/organic/all)
+	- Added support for 'company' parameter on [goft_jobs] shortcode
+	- Revised and updated ALL providers scraping and field mapping abilities
+
+fixes:
+	- Screen options not saving
+	- Provider details in 'Screen Options' not toggling
+	- PHP warnings sometimes showing on single job pages
+	- Tooltips positioning
+	- Deprecated 'contextual_help' warning
+
+1.6.3.2
+fixes:
+	- API settings not showing for Business plan
+
+1.6.3.1.1
+fixes:
+	- Job descriptions showing strange characters on sites using non-latin languages
+
+1.6.3.1
+changes:
+	- Added new 'Author Roles' admin setting to limit user roles that can be assigned to imported jobs
+	- Added support for 'tags', in schedules
+	- Removed scraping ability from 'Monster' (no longer possible to scrape)
+
+fixes:
+	- Deprecated PHP notices
+
+1.6.3
+changes:
+	- Added new provider 'remoteok' - 'https://remoteok.io/'
+	- Added support for 'logo' and 'category' tags for Jobs2Careers provider
+	- Updated 'Craigslist' domain name to '.org'
+
+fixes:
+	- 'Submit Resume & Apply' button showing for imported jobs when 'Resumes Manager' add-on was active
+	- Backend job listings sorting not wokring when custom filters were applied
+
+1.6.2.1
+changes:
+	- Added support for 'logo' and 'category' tags for Jobs2Careers provider
+
+fixes:
+	- Job source pointing to 404 when visitors applications were disabled
+
+1.6.2
+changes:
+	- Added support for new multi-country API - Neuvoo (https://neuvoo.com/)
+	- Removed scraping ability from ZipRecruiter since its blocked by the provider
+	- Looks for for pipes (|) and commas (,) on feeds that might contain multiple terms
+
+fixes:
+	- Disable source link when 'Allow Visitors to Apply' is checked
+
+1.6.1
+changes:
+	- Added scraping support to 'Dribbble'
+	- Added 'MediaBistro' provider (media jobs - supports metadata scraping)
+	- Added 'SalesHeads' provider (sales jobs)
+	- Added 'Healthcarejobs' provider (healthcare jobs)
+	- Added 'GitHub Jobs' provider (coding jobs)
+	- Removed 'totaljobs.com' provider since it no longer provides RSS feeds
+	- Removed 'us.jobs' provider since it no longer provides RSS feeds
+	- Removed 'sap.dice.com' provider since it no longer provides RSS feeds
+	- Moved all provider logos to '/images/'logo folder
+
+fixes:
+	- CVLibrary application URL's returning 'none'
+	- Option 'Allow Visitors to Apply' showing apply button when unchecked
+
+1.6.0
+changes:
+	- Added 'StackOverflow' provider
+	- Added support for one level deep field mappings
+	- Improved framework for integration with other themes/plugins
+	- Removed 'seek.com.au' provider since it no longer provides RSS feeds
+	- Freemius: tracking permissions enhancements
+
+fixes:
+	- Keyword matching not honoring 'Keyword Matching' settings
+	- HTML being stripped from job descriptions
+	- Invalid timestamp being displayed when schedules are run manually
+
+1.5.1.2
+changes:
+	- Added new option to replace apply to job inline link with text
+
+fixes:
+	- Some default meta fields data being ignored on import
+
+1.5.1.1
+changes:
+	- Introduce new filter 'goft_wpjm_source_link' for easier override of the application URL output
+
+fixes:
+	- Broken author link
+	- Broken official site link
+
+1.5.1
+changes:
+	- Added next schedule run date/time (aproximate) to schedules list
+	- Display only basic import stats on schedule list to make it cleared
+	- Removed 'Date' column from schedules list
+	- Only consider last run time for schedules that ran through Cron (ignore manual or test runs)
+	- Consider WordPress date format setting for dates displayed on schedules pages
+
+fixes:
+	- Some schedules not running after recent update to 'hourly' Cron job runs
+
+1.5.0
+changes:
+	- Updated plugin name on plugins list
+	- Introduce easy field mappings (map fields directly on the sample table!)
+	- Introduce smart field mappings!
+	- Introduce new recurrence times to schedules: 'hourly' and 'every 12 hours'
+	- Hide the provider details group of fields by default (can be toggled from the 'Screen Options' menu)
+	- Automatically clear cache when jobs are deleted (jobs previously imported that were then deleted couldn't be imported again without manually clearing cache)
+	- Lots of behind the scenes improvements
+	- Added new 'snippet' option for 'AdView' that allows choosing the snippet size
+	- Added 'Expire Jobs' option to AdView to auto-expire jobs with click tracking no longer valid
+
+fixes:
+	- Security fix
+	- Provider ID not assigned to jobs on backend, on scheduled imports
+	- Importer crashing when collecting existing jobs for duplicate comparison on large databases
+	- Company logos sometimes not importing if there was a direct 1:1 mapping
+	- Database query used to help checking for duplicates sometimes causing crashes on big databases
+
+1.4.7
+changes:
+	-  Introduce 2 new API providers!
+		. https://www.cv-library.co.uk (supports direct Apply link!) - scraper support (can pull full job descriptions, company, logo and location)
+		. https://www.jobs2careers.com (supports full job descriptions!)
+	- Added support for automatic background link updating for links that become stale and no longer trackable (AdView only)
+	- Code optimization
+	- Removed 'trabajos.com' (no longer provides RSS feeds)
+	- Removed 'uk.dice.com' (no longer provides RSS feeds)
+	- Added new option to auto-format long plain text job descriptions without paragraphs
+	- Added scraper to 'ZipRecruiter' API (can now pull full job descriptions, company, logo and location)
+	- Updated 'Careerjet' scraper (can now pull full job descriptions, company, logo and location)
+	- Updated 'The Guardian Jobs' scraper (can now pull full job descriptions, company, logo and location)
+
+fixes:
+	- Fixed 'Indeed' scraper (can now pull full job descriptions, company, logo and location)
+	- Sraper appending location multiple times
+	- Canonical option not working when YOAST SEO plugin active
+	- Google maps library handler name could conflict with other plugins (importer page could stop working)
+	- Some duplicates jobs being imported
+	- Missing 'Dribbble' default logo
+	- Missing 'WeWorkRemotely' default logo
+
+1.4.6.2
+fixes:
+	- Duplicate jobs not being discarded
+
+1.4.6.1
+changes:
+	- Removed 'Smashing Magazine' provider as no longer available
+fixes:
+	- Some jobs being incorrectly flagged as duplicates
+	- Help action link on plugins page incorrectly named 'Settings'
+
+1.4.6
+changes:
+	- Re-organized settings page
+	- Introduce new Help page
+	- Introduce new option for setting the default jobs duration for imported jobs
+	- Introduce new option for clearing cached data
+
+fixes:
+	- Scraping failing for some providers
+	- Job duration defaulting to 30 days when WPJM duration was empty
+	- Some duplicate jobs being imported
+	- Missing Indeed logo
+
+1.4.5
+changes:
+	- Added option for displaying imported jobs on a separate listing (new shortcode [goft_jobs] is available) (premium plans only)
+	- Added option to display filter dropdown to allow users filtering between all jobs, site jobs and external jobs, on frontend listings (premium plans only)
+fixes:
+	- Jobs being automatically expired on specific schedules
+	- Feeds containing a single job being split and imported as multiple jobs with weird content
+
+1.4.4
+Changes:
+	- Added ZipRecruiter to list of API providers (with salary and jobs age filter)
+	- Added AdView to list of API providers (with salary and jobs type filter)
+Fixes:
+	- 'Apply with Resume' showing for imported jobs when WPJM's Resume Manager add-on installed
+
+1.4.3
+Changes:
+	- Added support for negative keyword matching (excludes jobs that contain certain keywords)
+	- Added option to filter keywords by title and/or description
+	- Added job type/categories keywords mapping for more accurate smart assignments
+	- Added new 'Smart Assign' options:
+		. Categories Multi Terms Match/Job Types Single Term Match
+		. Job Types Multi Terms Match/Categories Single Term Match
+fixes:
+	- 'Smart Assign' not correctly matching terms
+	- Custom expiry dates being ignored
+
+1.4.2
+Changes:
+	- Updated Indeed URL schema to 'https'
+	- Removed 'idealist.org' from list of providers (no longer provides RSS feeds)
+Fixes:
+	- Incorrect 'No new jobs found' message when all jobs were excluded by user rules
+
+1.4.1
+Fixes:
+	- Application URL defaulting to user email in Pro plan
+1.4.0
+Fixes:
+	- 'Read more' option being ignored
+	- Geolocation working on manually imported jobs but failing in schedules
+	- Clicking 'Go Fetch Jobs' button multiple times spanning several loader messages
+	- Fatal error on PHP environments without the 'iconv()' extension installed
+	- Scheduler start times always defaulting to UTC time
+Changes:
+	- Added support for setting a job application email on each feed (applications behave as regular jobs but they are redirected to the specified email) (pro+)
+	- Removed Indeed (RSS and API) and Careerjet (API) import job limits (although not recommended, you can now import more jobs then the default limits) (pro+)
+	- Added support for Indeed API (more control over results and affiliate tracking) (pro+)
+	- Added support for Careerjet API (more control over results and affiliate tracking) (pro+)
+	- Added new Indeed and Careerjet option pages for setting Publisher ID's and API defaults (pro+)
+	- Automatically expire Indeed jobs that are flagged as 'Expired' (pro+)
+	- Added option to feature Indeed 'Sponsored' jobs (pro+)
+	- Added 'Description Length' and 'Limit' parameters to Careerjet RSS feed (pro+)
+	- Added 'Use CORS proxy' setting to force load 'https://' feeds through a CORS proxy
+	- Better compatibility with RSS Feeds that could not be read but were valid in W3C validator
+	- Removed 'Force Feed' option. The importer will now automatically force load a feed if nothing else works
+	- Reduced RSS Feeds timeout to 30 seconds
+	- Automatically default all invalid RSS item dates (1970-01-01) to current date
+	- Added import duration time column to schedules log table
+	- Geolocation location names now default to the site language
+	- Added caching mechanisms for geocoding requests
+	- Removed 'dice.com' from list of providers (no longer provides RSS feeds)
+	- Performance optimizations
+
+1.3.1
+Fixes:
+	- Weekly/Monthly schedules not running if cron wasn't triggered on the first day of the week/month
+	- Saved scrape fields not being loaded with the respective template
+	- 'Content Period' column showing an extra number on the schedules listing
+	- Additional 'Settings' page showing on WP backend sidebar
+	- Some geolocation fields (e.g: 'geolocation_city') not being filled correctly
+	- RSS feeds with valid location coordinates showing 'Anywhere'
+	- PHP7 issues loading feeds
+
+Changes:
+	- Added hook to allow skipping meta data extraction using regular expressions for specific providers
+	- Added optional 'Providers Filter' for filtering jobs by 'provider'
+	- Added 'Status' option to the settings page (allows assigning a specific status to imported jobs)
+	- Added 'Limit' column to the schedules list
+	- Added 'seek.com.au' to the list of RSS providers
+	- PHP warnings on single job pages when 'wp-job-manager-applications' installed, in WP 4.7
+	- Added new filters
+	- Use 'wp_kses()' instead of 'strip_tags()' for sanitizing job descriptions
+	- Default 'Posted By' user to current logged in user, on import jobs page
+
+1.3
+Fixes:
+	- Application form being displayed by mistake on imported jobs when 'Job Applications' add-on was installed
+	- Wrong import limit calculation when limit was superior to total jobs in feed
+	- Added 'nopaging' to the query that checks for duplicate jobs
+	- Check for 'OpenGraph' class before loading it (better compatibility with other plugins that use the same class)
+
+Changes:
+	- Added ability to search for additional meta data like company name and locations in RSS items title, on select providers
+	- Added manual actions to schedules: 'Test' or 'Run' (Pro+ plan only!)
+	- Added option to extract incomplete/missing meta data on select providers (Pro+ plan only!) (can extract full job descriptions, companies, locations and logos directly from the site providers - e.g: Indeed - not always guaranteed to work!)
+	- Moved 'Fetch Logos' checkbox to the 'Import Details' section
+	- Moved logos fetching and geocoding previously done while the RSS feed was loaded to the main import process (improves RSS feeds loading speed)
+	- Added New settings page with several options:
+
+		General:
+		. Imported Jobs Filters   - Displays new filters for filtering jobs by 'type' (imported jobs/regular jobs) or by 'provider'
+		. Jobs Provider Column    - Display a new column on job listings with the job provider site
+		. Duplicates Behavior     - Choose to ignore or update duplicate jobs
+		. Google API Key          - Specify your Google Maps API key to use geolocation and reduce API limits
+		. Rate Limit              - Geocoding rate limit (number of locations geocodes per second)
+		. Allow Visitors to Apply - Choose whether to Hide/Show the apply button to visitors
+		. Read More Text          - Specify the read more text appended to job description excerpts (default is [...])
+		. Canonical Links         - Improve SEO with canonical links pointing to the source URL
+		. Debug Log               - Enable it to generate a report to debug any issues with the support team
+
+		Scheduler: (Pro+ plan only!)
+		. Start time - Set the approximate time for the import schedules to start
+		. Interval   - Set the interval between schedule runs
+
+	- The 'Smart Assign' feature will now search for taxonomy terms (job types and categories) on any custom RSS feed tag hooked to the 'goft_wpjm_providers_valid_item_tags' filter
+	- Removed 'CareerBuilder' as provider since it no longer provides RSS feeds
+	- Updated 'jobsproblogger.net' provider (now called 'problogger.com')
+
+1.2.4
+Fixes:
+	- Security and performance fixes (update is highly recommended!)
+	- Schedules being “stuck” with no response
+Changes:
+	- Laying foundations for upcoming  major new version
+
+1.2.3
+Fixes:
+	- Existing location info for providers using geolocation tags (like Indeed) sometimes not recognized and displayed as 'Anywhere'
+	- Schedules authors not saving correctly
+	- W3 Total Cache plugin sometimes causing import process to fail
+	- Template names using quotes/double-quotes causing javascript issues
+	- Multi-country providers not inheriting main provider settings (ignoring location and other meta)
+
+Changes:
+	- Added 30 seconds time interval schedule runs (interval time can be customized using the filter - 'goft_wpjm_schedules_interval_sleep')
+	- Added multi-country provider 'monster.com' (US, Canada, UK, France, Germany and Netherlands) with location meta (Pro+ plan only)
+
+1.2.2
+Fixes:
+	- Fatal error on plugin install screen (Premium plans only)
+
+1.2.1
+Fixes:
+	- Job categories/types editable fields showing below the details group (Free version only)
+	- Fatal errors causing blank screen when viewing the plugins page
+	- Conflicts with WooCommerce 'select2' libraries causing weird visual issues in import jobs page
+
+1.2
+Fixes:
+	- Users dropdown only showing admin users
+
+Changes:
+	- Tweaked UI
+	- Replaced simple providers dropdown with fancier 'Select2' dropdown
+	- Added 'Smart Assign' option to terms group (automatically assigns the best term(s) to each imported job considering jobs content - for Pro and Pro+ plans)
+	- Added 'Keyword' filtering option to filter imported jobs using keywords (for Pro and Pro+ plans)
+	- Added log meta box to schedule pages (provides stats info on imported, duplicates, and total excluded jobs - pro and pro+ plans)
+	- Added 'Advanced/Basic' toggle under the 'Screen Options' for toggling between basic/advanced import settings
+	- Added guided help tour
+	- Added 'Screen Options'
+	- Added 'Help' tab
+	- Added new generic RSS providers: trabajos.com, us.jobs
+	- Highlight job expiry date if older then today
+
+1.1.2
+Fixes:
+	- Invalid 'Create Template' link under schedule pages
+	- Use 'the_content' filter for feeds description (fixes HTML entities not properly converted on some RSS feeds)
+	- Strip tags in titles (fixes HTML tags showing in post titles on some RSS feeds)
+
+Changes:
+	- Added Option to force load a feed (for feeds that although valid may fail to load)
+
+1.1.1
+Fixes:
+ 	- Feeds not loading in Firefox
+
+1.1
+Fixes:
+ 	- Feeds from known providers not returning any data
+
+1.0 - First Release

@@ -1,0 +1,3 @@
+[submodule "admin/plugins-browser"]
+	path = admin/plugins-browser
+	url = https://sebet@bitbucket.org/sebet/plugins-browser.git

@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'goft-fontello';
+  src: url('../font/goft-fontello.eot?85192281');
+  src: url('../font/goft-fontello.eot?85192281#iefix') format('embedded-opentype'),
+       url('../font/goft-fontello.woff2?85192281') format('woff2'),
+       url('../font/goft-fontello.woff?85192281') format('woff'),
+       url('../font/goft-fontello.ttf?85192281') format('truetype'),
+       url('../font/goft-fontello.svg?85192281#goft-fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'goft-fontello';
+    src: url('../font/goft-fontello.svg?85192281#goft-fontello') format('svg');
+  }
+}
+*/
+
+ [class^="icon-goft-"]:before, [class*=" icon-goft-"]:before {
+  font-family: "goft-fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-goft-floppy-1:before { content: '\e800'; } /* '' */
+.icon-goft-money:before { content: '\e801'; } /* '' */
+.icon-goft-guidedog:before { content: '\e802'; } /* '' */
+.icon-goft-paste:before { content: '\e803'; } /* '' */
+.icon-goft-briefcase:before { content: '\e804'; } /* '' */
+.icon-goft-docs:before { content: '\e805'; } /* '' */
+.icon-goft-thumbs-down-alt:before { content: '\e806'; } /* '' */
+.icon-goft-trash:before { content: '\e807'; } /* '' */
+.icon-goft-trash-1:before { content: '\e808'; } /* '' */
+.icon-goft-rss:before { content: '\e809'; } /* '' */
+.icon-goft-to-end-alt:before { content: '\e80a'; } /* '' */
+.icon-goft-attention:before { content: '\e80b'; } /* '' */
+.icon-goft-folder-open:before { content: '\e80c'; } /* '' */
+.icon-goft-download-cloud:before { content: '\e80d'; } /* '' */
+.icon-goft-pencil:before { content: '\e80e'; } /* '' */

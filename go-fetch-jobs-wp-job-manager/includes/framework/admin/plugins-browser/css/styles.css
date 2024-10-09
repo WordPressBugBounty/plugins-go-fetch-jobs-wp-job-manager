@@ -1,0 +1,210 @@
+/* Filter Bar */
+
+.filter-links.plugins-browser-filter {
+	margin-left: 0;
+    height: 32px;
+    vertical-align: top;
+}
+
+.wp-filter .search-form .filter-links select {
+	margin-left: 5px;
+}
+
+/* Plugin Card */
+
+.plugin-card h3 {
+	font-size: 16px;
+}
+
+.plugin-card .column-category,
+.plugin-card .column-requirements,
+.plugin-card .column-hosted {
+	float: left;
+	clear: left;
+	margin-bottom: 4px;
+	padding-top: 5px;
+}
+
+.plugin-card .column-hosted {
+	float: right;
+	clear: right;
+}
+
+.plugin-card .column-updated {
+	padding-top: 5px;
+	float: left;
+	clear: left;
+	text-align: left;
+}
+
+.plugin-card .column-rating {
+	float: right;
+	clear: right;
+}
+
+.plugin-card .plugin-card-premium {
+	background-color: #fff;
+}
+
+.plugin-card .column-premium {
+	float: left;
+    clear: left;
+    max-width: 180px;
+}
+
+.plugin-card .column-premium strong {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.plugin-card .column-price .single-price {
+	line-height: 2.4em;
+}
+
+.plugin-card .column-price .price-sale {
+	text-decoration: line-through;
+	padding-right: 8px;
+	font-size: 14px;
+}
+
+.plugin-card .column-price span {
+	text-align: center;
+}
+
+.plugin-card .column-price h3 {
+	margin-bottom: 0;
+}
+
+.plugin-card .column-price {
+	float: right;
+}
+
+.plugin-card .details-external {
+	font-size: 15px;
+}
+
+.plugin-card .demo {
+	min-width: 73px;
+    text-align: center;
+}
+
+/* Vendor */
+
+h2 {
+	float: left;
+}
+
+.wp-shp-browser-vendor {
+	float: right;
+	padding: 0 10px;
+	position: relative;
+}
+
+.wp-shp-browser-vendor .wp-shp-browser-vendor-name {
+	font-size: 20px;
+	font-family: monospace, arial;
+}
+
+.wp-shp-browser-vendor .wp-shp-browser-vendor-name a {
+	text-decoration: none;
+}
+
+.wp-shp-browser-vendor .wp-shp-browser-vendor-info {
+	float: right;
+	padding-left: 10px;
+}
+
+.wp-shp-browser-vendor .wp-shp-browser-social {
+    padding-top: 10px;
+}
+
+.wp-shp-browser-vendor img {
+    max-height: 50px;
+}
+
+.wp-shp-browser-vendor .vendor-avatar img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.wp-shp-browser-vendor .wp-shp-browser-social a {
+	text-decoration: none;
+}
+
+.wp-shp-browser-vendor .dashicons {
+	padding-right: 0 2px;
+}
+
+.wp-shp-browser-vendor .bubble {
+	position: absolute;
+    width: 600px;
+    right: 10px;
+    bottom: -118px;
+	display: none;
+}
+
+
+/* Speech Bubble */
+
+.bubble {
+	position: relative;
+	display:inline-block;
+	max-width:274px;
+	min-height:1.5em;
+	padding: 20px;
+	background: #FFFFFF;
+	border: #107BAF solid 4px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	z-index: 999;
+    text-align: justify;
+}
+
+.bubble:before{
+    content: "";
+    position: absolute;
+    bottom: 112px;
+    left: 60%;
+    border-style: solid;
+    border-width: 0 15px 15px;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+.bubble:after {
+    content: "";
+    position: absolute;
+    bottom: 112px;
+    left: calc(60% - 3px);
+    border-style: solid;
+    border-width: 0 18px 18px;
+    border-color: #107BAF transparent;
+    display: block;
+    width: 0;
+    z-index: 0;
+}
+
+
+/* Responsiveness */
+
+@media screen and (max-width: 1100px) and (min-width: 782px), (max-width: 480px) {
+
+	.plugin-card .action-links {
+		position: static;
+		margin-left: 210px;
+		width: auto;
+	}
+
+	.plugin-card .name-top {
+		min-height: 150px;
+	}
+
+	.plugin-card .desc {
+		margin-left: 0;
+	}
+
+}

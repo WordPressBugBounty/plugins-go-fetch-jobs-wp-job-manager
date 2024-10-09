@@ -1,0 +1,215 @@
+
+/* General */
+
+.regular-text2 { width: 45em; }
+.regular-text3 { width: 25em; }
+.goft-icon { font-family: Fontello !important;content: '\e800'; }
+.credits-inform { background: hsl(0, 0%, 89%); border-radius: 10px; padding: 15px;}
+.feed-type-switch { text-decoration: underline; }
+.feed-type-toggle { cursor: pointer;}
+.tr-rss-file { display: none; }
+.tr-toggle-hide { display: none; }
+.secondary-container .dashicons-before { display: inline-block; float: left; padding-right: 10px; color: #027cba78; }
+
+/* Meta boxes */
+
+.today-warn { display: none; }
+
+/* Errors */
+
+.goft_wpjm.no-jobs-found.feed { width: 50em;display: block;margin: 15px 0;background: #E65D5D;padding: 5px;color: #fff;border-radius: 5px;font-style: normal; padding: 8px; }
+
+/* Table Rows & Columns */
+
+.goft-table-wrapper { display: flex; flex-direction: column;}
+#gofj_import { display: contents;}
+
+.form-table.goft { background-color: #fff;}
+.form-table.goft .limit-warn.secondary-container { border-left: 5px solid #ff9693;  }
+.form-table.goft tr.temp-tr-hide:not(.tr-sample) td,.form-table.goft tr.temp-tr-hide:not(.tr-sample) th[scope="row"],
+.form-table.goft tr.temp-tr-hide.goft-sub-section .goft-section { padding-left: 20px; padding-right: 0; }
+.form-table .tr-sample{border-top: 2px dashed #ececec;}
+.form-table.goft tr:not(.goft-sub-section) .goft-section {padding: 5px 15px; background-color: #f1f1f1;padding-top: 28px;}
+.form-table p.auto-feed {font-size: 12px;}
+
+/* Sample table */
+.goft_wpjm_table h4 { color: #616161;;}
+.form-table.goft .tr-hide, .form-table.goft .temp-tr-hide, .button-primary.import-posts { display: none; }
+.form-table.goft .tr-always-hide { display: none !important; }
+.form-table.goft .hr-break th, .form-table.goft .hr-break td { padding: 0; }
+table.goft_wpjm_table.widefat { table-layout: fixed; border: 0;}
+.goft_wpjm_table td { text-wrap: normal; }
+.form-table.goft .goft_wpjm_table th { padding-left: 10px; }
+.form-table th {font-size: 13px; padding: 20px 10px 20px 20px;}
+.form-table th p {font-weight: normal;}
+.tools_page_wp-xporter .form-table th, .tools_page_wp-xporter .form-table td { padding-top: 5px;padding-bottom: 5px; }
+.goft_wpjm_table { width: 80%; }
+.goft_wpjm_table input[type=hidden]:parent { display: none; }
+.goft_wpjm_table td, .goft_wpjm_table th { padding: 10px !important; }
+.goft_wpjm_table th { padding-left: 2px; }
+.goft_wpjm_table .sample_content, .goft_wpjm_table .mappings { font-size: 12px;color: #9C9C9C; }
+.goft_wpjm_table .mappings select { font-size: 12px; max-width: 100%; }
+.form-table .available-jobs { display: inline-block; padding: 5px 10px; background-color: #0173aa; color: #fff; font-size: 1em; }
+.form-table .available-jobs-desc { display: inline-block; margin-left: 10px; text-transform: uppercase; color: #0273a9;}
+.form-table .goft_wpjm_jobs_found { font-size: 1em; margin: 1.33em 0; letter-spacing: 2px; }
+.form-table h4.goft_wpjm_jobs_found {border: 0 !important;}
+.form-table .limit-jobs-found { background-color: #dcdcdc69; padding: 8px 15px; font-size: 12px; margin: 10px; border-radius: 3px; color: #027cba; font-size: 1.1em;}
+
+/* Table Fields */
+
+.goft_wpjm_table td { font-size: 11px; }
+.goft_wpjm_table select, .goft_wpjm_table input[type=text] { height: 20px;font-size: 10px; }
+.goft_wpjm_table td .field { font-weight: bold; color: #0173aa; }
+.goft_wpjm_table .custom td .field, .show-hidden-fields { color: #0173aa;font-weight: bold; }
+.goft_wpjm_table .taxonomy td .field, .show-taxonomy-fields { color: #4C8641;font-style: italic;font-weight: bold; }
+
+
+/* Providers */
+
+#providers_list { display: none; }
+.force-feed { display: none; }
+.providers-placeholder { background-color: #fff;display: none;border-radius: 5px; border: 1px solid #ececec;margin-right: 20px;background-color: #fff;padding: 0 10px;}
+.providers-placeholder ul li { list-style: initial; }
+.providers-placeholder ul, .providers-placeholder ol { font-size: 12px;margin-left: 20px; }
+.providers-placeholder-content { background-color: #fff;padding: 10px 0; }
+.provider-logo-orig { padding: 10px 0;max-height: 64px; max-width: 260px; }
+.form-table.goft .dashicons-rss:not(.title-icon) { color: #0073AA; }
+.form-table h2 .dashicons.title-icon { padding-right: 15px;color: #000; }
+.form-table h2 .icon.title-icon { padding-right: 5px;color: #000; }
+.goft-section h2 {text-transform: uppercase; color: #000; font-family: sans-serif; font-style: normal !important; letter-spacing: 1px;border-bottom: 1px solid #e4e4e4; padding-bottom: 8px;}
+.form-table h2 .title-icon:before { font-size: 25px; }
+.form-table h4{ color: #4a4949; margin-top: 0; border-bottom: 2px dashed #e4e4e4; padding-bottom: 8px; }
+.form-table h4 .title-icon { padding-right: 3px;color: #4a4949;vertical-align: bottom; }
+.form-table h4 .title-icon:before { font-size: 18px; }
+.form-table th{ width: 150px;color: #798088; font-weight: normal;}
+.rss-copied-msg { margin-left: 5px;background-color: #0073AA;color: #fff;padding: 3px; }
+.copy-paste-info { background-color: #0073AA;color: #fff; }
+.input-feed-pasted { background-color: rgba(0, 133, 186, 0.75) !important;color: #fff !important; }
+input[type="file"] { padding: 5px; border: 1px solid #e2e2e2; border-radius: 5px;}
+.feed-builder .params:not(.domain-param) { float: left;margin-right: 10px; padding-bottom: 10px; }
+.feed-manual-setup { border-bottom: 1px solid #F3F3F3; }
+.feed-manual-setup, .feed-builder, .multi-region-details, .multi-region-details-alt { display: none;padding-left: 15px; }
+.provider-expand-feed-manual-setup, .provider-expand-feed-builder { margin: 5px 0;display: inline-block; }
+.section-expand{background: #f1f1f1;padding: 9px;border-radius: 5px;}
+.close-provider { display: block;float: right;cursor: pointer; background: #fff;padding: 0 10px;}
+.feed-manual-setup, .feed-builder { margin: 10px 0; }
+.secondary-container { display: flex; border-left: 3px solid #94bedc; border-bottom: 1px solid #027cba21; padding: 10px;background-color: #F9F9F9;border-radius: 5px;margin: 10px 0 0 0; color: #797979; font-size: 13px; line-height: 1.5;}
+.form-table td p.secondary-container.sample-table-notes {font-size: 14px;}
+.reset-val { display: inline-block;margin-right: 5px; }
+.reset-val .dashicons { font-size: 16px;color: #C1C1C1; }
+.country-sel, .country-sel+.select2 .select2-selection { background-color: #F9F9F9 !important; }
+
+.provider-header { background: #f5f5f5; padding: 14px; border-radius: 10px; }
+.form-table td p.provider-rss-custom-placeholder { padding-top: 10px; max-width: 900px; word-wrap: break-word; display: inline-block; }
+.form-table td p.provider-rss-custom-placeholder { border: 1px dashed #6f7b85; padding: 15px; margin-top: 25px;}
+.form-table td p.provider-rss-custom-placeholder .provider-rss-custom { margin-top: 10px; float: left; margin-left: 5px; display: inline-block; max-width: 700px; }
+
+.form-table .bulk-scrape-select{padding: 10px 0;}
+.form-table .bulk-scrape-select a {text-decoration: underline;}
+
+/* Filters */
+
+.filter_label { font-size: 12px;font-weight: normal; }
+
+/* Processing */
+
+.goft_wpjm.processing { background: transparent url('../images/processing.gif') no-repeat; display: inline-block;width: 16px;margin-left: 10px; border: 0; }
+.goft_wpjm.processing-dog { background: transparent url('../images/processing-dog-run.gif') no-repeat; display: inline-block;width:64px;height:32px;margin-left:15px;vertical-align:middle; }
+.inside .goft_wpjm.processing-dog { margin: 0px !important }
+
+.goft-stats-container { position: relative;}
+.goft-stats-image {position: absolute; top: 30px; left: 358px; }
+@media screen and (max-width: 782px) { .goft-stats-image { display: none;} }
+@media screen and (max-width: 782px) {
+	.form-table th { width: 100%; padding: 14px 15px; }
+	.form-table td { padding: 14px 15px; padding: 0 15px; padding-bottom: 13px; }
+	.form-table td.tip { display: none; }
+}
+
+/* Import */
+
+.import-wait-message {background-color: #f7f7f7; padding: 10px; font-style: italic; }
+
+/* Dates */
+
+.span_date { font-size: 12px; }
+#from_date, #to_date { cursor: pointer; }
+
+/* Default Values */
+
+.section-values { background-color: #fff; border-radius: 5px; }
+.section-values span:first-of-type { display: inline-block;margin-left: 15px; }
+.form-table td.section-advanced { padding-left: 0; }
+.section-values p.goft-basic { width: 100%; }
+.goft-basic strong { min-width: 120px;padding-right: 10px;text-align: right;display: inline-block;vertical-align: top; }
+.goft-basic[data-classes*=value-warning] span{ padding: 0 3px; background-color: red; color: #fff;  }
+
+/* Images */
+
+.goft-og-image { height: 32px; }
+img.goft-image-thumb { height: 32px; }
+img.goft-source-logo, img.goft-company-logo { min-width: 64px;height: 64px; }
+.goft-powered-by-google { width: 100px; }
+
+/* Submit */
+
+.button-primary.import-posts { width: 200px;height: 50px;font-size: 15px; }
+.secondary-container.save-warning { font-size: 13px; border-left: 3px solid #e0b021; }
+.secondary-container.warning { border-left: 3px solid #e0b021; }
+.dashicons-warning:before { margin-right: 5px; }
+.provider-data.dashicons-warning:before {color:#e0b021}
+.save-warning .dashicons-warning { margin-right: 5px;}
+.save-warning .dashicons-warning:before, .other.dashicons-warning:before { vertical-align: inherit;color: #e0b021; }
+.limit-warn .dashicons-warning:before { color:#ff3b3b8c; }
+
+.provider-data.secondary-container.gofjerror { border-left: 3px solid #ff0000; margin: 10px 0 0 0; padding: 10x; color: #ff0000; }
+.provider-data.secondary-container.gofjerror .dashicons-dismiss { color: #ff0000 }
+.provider-data.secondary-container.gofjerror .dashicons-gofjerror:before { color: #ff0000 !important; }
+
+.provider-data.secondary-container.revenue-share { border-left: 3px solid #36a236; }
+.provider-data.secondary-container.revenue-share .dashicons:before {  color: #36a236;}
+
+.secondary-container.custom-files-info, .secondary-container.provider-credits-info { border: 0; }
+
+/* Icon */
+
+.limitation { color: #D04E4E;line-height: 17px; }
+
+/* Select2 */
+.select2-gofj-multiple{display: none !important;}
+.select2-results__group { background: #DDE5E8; }
+.select2-container--default .select2-results__option--highlighted[aria-selected] { background-color: #91A2A9 !important; }
+.select2-container--default.select2-container--focus .select2-selection--multiple {border-color: #ccc;}
+.select2-container .select2-search--inline { margin: 0; }
+.select2-container--default .select2-selection--multiple .select2-selection__choice { margin-bottom: 0; }
+ul.select2-results { max-height: 400px; }
+.select2-container--default .select2-results__option--highlighted[aria-selected] span.provider-desc { color: #E2E2E2; }
+span.provider-desc { float: right;color: #B5B5B5; }
+.expand-minimize { float: right;color: #969696; }
+.expand-minimize:before { font-size: 15px; height: 15px; vertical-align: middle; }
+input.select2-search__field { width: 100% !important }
+.select2-results__option:not(:first-of-type) .select2-results__options--nested li { display: none; }
+.select2-regular-text { width: 30em; }
+.tr-special-scrape-options .select2-container {	width: 80% !important; }
+
+.select2-results__option[aria-label*="API"] .select2-results__group { background-color: #c8d7de; }
+.select2-results__option[aria-label*="ATS"] .select2-results__group { background-color: #c8d7de; }
+
+.select2-results__option[aria-label*="Partners"] .select2-results__group { background-color: #a5bbc5; }
+
+/* Autocomplete */
+
+.gm-err-autocomplete { background-repeat: no-repeat !important; background-size: 16px !important; background-position: 3px !important; }
+
+/* Auto Schedules */
+
+.form-table .tr-auto-schedule { display: none; }
+.form-table .auto-schedule-toggle { display: none; }
+.form-table .tr-auto-schedule label { display: inline-block }
+.form-table .tr-auto-schedule input { vertical-align: middle; }
+
+/* Required Fields */
+
+.required-field { display: block;}
+.required { border: 1px solid red !important; background-color: #ff00001a !important; }
+.required.required-or { border: 1px solid #d7a111 !important; background-color: #ffefc0 !important; }

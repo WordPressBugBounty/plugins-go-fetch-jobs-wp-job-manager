@@ -1,0 +1,25 @@
+{
+  "name": "GoFetchJobs",
+  "version": "1.7.3",
+  "description": "GOFJ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:js",
+	"build:js:conditional": "bash ./minify-babel-conditional-js.sh",
+    "build:js": "npm run build:js:conditional"
+  },
+  "author": "Bruno Carreço",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+	"uglifyjs-webpack-plugin": "v1.0.0-beta.1",
+    "uglify-js": "^2.6.3"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.5"
+  }
+}
