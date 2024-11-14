@@ -241,6 +241,8 @@ class GoFetch_Sample_Table extends GoFetch_HTML_Table {
 				$data['mapping'] = self::core_fields_grouped_dropdown( $all_fields, $field, $default );
 			}
 
+			$core_field = '';
+
 			if ( ! empty( $reserved_fields[ $field ] ) && isset( $flipped_core_custom_fields[ $reserved_fields[ $field ] ] ) ) {
 				$core_field = $flipped_core_custom_fields[ $reserved_fields[ $field ] ];
 			} elseif( ! empty( $reserved_fields_internal[ $field ] ) && !isset( $flipped_core_custom_fields[ $reserved_fields_internal[ $field ] ] ) ) {

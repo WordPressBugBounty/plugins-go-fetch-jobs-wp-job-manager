@@ -4,8 +4,8 @@ Contributors: SebeT, freemius
 Tags: rss, feed, jobs, WP Job Manager, automate
 Requires at least: 5.5
 Requires PHP: 7.4.1
-Tested up to: 6.6.1
-Stable tag: 1.8.4.7
+Tested up to: 6.7
+Stable tag: 1.8.4.8
 
 Instantly populate your WP Job Manager database using RSS job feeds from the most popular job sites or load XML/JSON files (premium only).
 
@@ -48,7 +48,7 @@ Upgrade to a *Premium* plan to keep it automatically updated with fresh jobs add
 > * Ready to use RSS feeds from popular job sites including: *[adzuna.com](adzuna.com) and [careerjet.com](careerjet.com)*
 > * Import jobs from custom XML/JSON files
 > * Import jobs from local files
-> * Import jobs from *AdZuna, Careerjet, Talent.com, Talroo, Jooble, Juju and CVLibrary* API's
+> * Import jobs from *AdZuna, SourceStack, WhatJobs, Careerjet, Talent.com and many others
 > * Custom RSS builder for select providers that allows creating custom RSS feeds with specific keywords/location
 > * Automated scheduled imports
 > * Positive and negative keyword filtering
@@ -92,6 +92,34 @@ If the premium plan is not activated immediately please try again later since it
 12. Jobs Filter & Provider Column
 
 == Changelog ==
+
+1.8.4.8.1
+changes
+	- Updated Freemius SDK
+fixes
+	- Fixed PHP warnings
+
+1.8.4.8
+Changes:
+	- 'WhatJobs' provider is now a top partner (includes full job descriptions)
+	- Additional internal formatting rules for plain text descriptions
+	- Limit schedules recurrence options by provider
+	- Display provider ID on the schedule page
+
+fixes:
+	- Monthly and Weekly schedules running every hour on the first day of the month/week
+	- Schedules 'next run time' not showing valid times
+
+1.8.4.7.1
+Changes:
+	- 'WhatJobs' provider is now a top partner (includes full job descriptions)
+	- Additional internal formatting rules for plain text descriptions
+	- Limit schedules recurrence options by provider
+	- Display provider ID on the schedule page
+
+fixes:
+	- Monthly and Weekly schedules running every hour on the first day of the month/week
+	- Schedules 'next run time' not showing valid times
 
 1.8.4.7
 Changes:

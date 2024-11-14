@@ -294,6 +294,13 @@ class GoFetch_Frontend {
 			return $description;
 		}
 
+		$span_br   = apply_filters( 'goft_wpjm_auto_format_lists', 'span_br' );
+		$span_br_match = apply_filters( 'goft_wpjm_auto_format_list_match', '<span><\/span>' );
+
+		if ( $span_br ) {
+			$description = preg_replace( '/' . "{$span_br_match}" . '/', "<br/>", $description );
+		}
+
 		// Split sentences by '.', '?' or '!', if they are followed by a space.
 		$sentences = preg_split( '/(?<=[.?!])\s+(?=[A-Z])/', $description, -1, PREG_SPLIT_DELIM_CAPTURE );
 

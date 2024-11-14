@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
 	'use strict';
 
+	var g_provider = {};
+
 	var g_feed_base_url = '';
 	var params          = [];
 	var xhr             = '';
@@ -150,6 +152,17 @@ jQuery(document).ready(function($) {
 			$('input[name=feed-params-gofj-country-name]').val($('select[name=feed-locale_code] option:selected').text());
 		}
 
+	}
+
+	function maybeLimitSchedules() {
+		var valid_schedules = g_provider['invalid_schedules'] || false;
+		if ( valid_schedules ) {
+			jQuery('.schedule-recurrence option').each( function() {
+				if ( valid_schedules.indexOf( jQuery(this).val() ) >= 0 ) {
+					jQuery(this).prop('disabled', true);
+				}
+			})
+		}
 	}
 
 	function missingCoreFields() {
@@ -750,7 +763,7 @@ jQuery(document).ready(function($) {
 
 				$('#templates_list').val( template_name );
 
-				// Display auto scheduling options if there's no schedule using the saved tempalte.
+				// Display auto scheduling options if there's no schedule using the saved template.
 				if ( ! templateHasSchedule( template_name ) ) {
 					$('.tr-auto-schedule').show();
 				} else {
@@ -1071,6 +1084,8 @@ jQuery(document).ready(function($) {
 	$(document).on( 'goftj_rss_provider_loaded', function( e, params, required_query_params, savedData ) {
 		var currFeedURL = $('.feed-builder input[name=feed-url]').val();
 
+		g_provider = params;
+
 		selRegionDomain = $('[name=feed-region_domains]').val();
 
 		var is_domain_keyword = 'domain_k' === $('.feed-builder input[name=feed-param-keyword]').val();
@@ -1254,6 +1269,8 @@ jQuery(document).ready(function($) {
 			var defaultScheduleName = '(Auto Schedule) ' + $('input[name=template_name]').val();
 			$('.schedule-name').val( defaultScheduleName );
 			$('.auto-schedule-toggle').show();
+
+			maybeLimitSchedules();
 		} else {
 			$('.auto-schedule-toggle').hide();
 		}

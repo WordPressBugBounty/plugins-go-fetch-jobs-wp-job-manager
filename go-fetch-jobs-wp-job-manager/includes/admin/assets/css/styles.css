@@ -166,8 +166,8 @@ img.goft-source-logo, img.goft-company-logo { min-width: 64px;height: 64px; }
 .provider-data.secondary-container.gofjerror .dashicons-dismiss { color: #ff0000 }
 .provider-data.secondary-container.gofjerror .dashicons-gofjerror:before { color: #ff0000 !important; }
 
-.provider-data.secondary-container.revenue-share { border-left: 3px solid #36a236; }
-.provider-data.secondary-container.revenue-share .dashicons:before {  color: #36a236;}
+.provider-data.secondary-container.revenue-share { border-left: 3px solid #95bedc; }
+.provider-data.secondary-container.revenue-share .dashicons:before {  color: #95bedc;}
 
 .secondary-container.custom-files-info, .secondary-container.provider-credits-info { border: 0; }
 

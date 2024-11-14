@@ -60,7 +60,7 @@ class GoFetch_WPJM_Shortcode {
 		$country = self::$country;
 		$template = self::$template;
 
-		if ( defined( 'DOING_AJAX' ) ) {
+		if ( defined( 'DOING_AJAX' ) && isset( $_REQUEST['form_data'] ) ) {
 			parse_str( sanitize_text_field( $_REQUEST['form_data'] ), $output );
 			$output = array_map( 'sanitize_text_field', $output );
 

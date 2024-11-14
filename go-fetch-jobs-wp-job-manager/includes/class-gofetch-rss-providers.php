@@ -1106,9 +1106,6 @@ class GoFetch_RSS_Providers {
                 $meta[strtolower( $category )][$free][] = $provider;
             }
         }
-        if ( !empty( $category ) ) {
-            return $meta[strtolower( $category )];
-        }
         return $meta;
     }
 

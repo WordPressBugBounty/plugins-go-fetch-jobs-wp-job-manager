@@ -85,7 +85,6 @@ class GoFetch_API_Feed_Provider_Intro {
 			'Talroo'      => 'https://www.talroo.com',
 			'Jooble'      => 'https://jooble.org',
 			'Jobtome'     => 'https://ads.jobtome.com',
-			'Jooble'      => 'https://jooble.org',
 			'Juju'        => 'https://www.juju.com',
 			'TheMuse'     => 'https://www.themuse.com',
 			'Talent'      => 'https://talent.com',

@@ -1,3 +1,32 @@
+1.8.4.8.1
+changes
+	- Updated Freemius SDK
+fixes
+	- Fixed PHP warnings
+
+1.8.4.8
+Changes:
+	- 'WhatJobs' provider is now a top partner (includes full job descriptions)
+	- Additional internal formatting rules for plain text descriptions
+	- Limit schedules recurrence options by provider
+	- Display provider ID on the schedule page
+
+fixes:
+	- Monthly and Weekly schedules running every hour on the first day of the month/week
+	- Schedules 'next run time' not showing valid times
+
+1.8.4.7.1
+Changes:
+	- 'WhatJobs' provider is now a top partner (includes full job descriptions)
+	- Additional internal formatting rules for plain text descriptions
+	- Limit schedules recurrence options by provider
+	- Display provider ID on the schedule page
+
+fixes:
+	- Monthly and Weekly schedules running every hour on the first day of the month/week
+	- Schedules 'next run time' not showing valid times
+
+
 1.8.4.7
 Changes:
 	- Added new API provider: Appcast (https://www.appcast.io/)

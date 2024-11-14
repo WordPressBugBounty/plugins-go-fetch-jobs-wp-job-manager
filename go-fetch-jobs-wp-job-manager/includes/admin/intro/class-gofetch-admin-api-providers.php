@@ -61,7 +61,7 @@ class GoFetch_Provider_Settings extends BC_Framework_Tabs_Page {
 				padding: 0 5px;
 				font-style: normal;
 			}
-			.nav-tab[href*=sourcestack] {
+			.nav-tab[href*=whatjobs] {
 				margin-right: 20px;
 			}
 			.secondary-container { display: flex; border-left: 3px solid #94bedc; border-bottom: 1px solid #027cba21; padding: 10px;background-color: #F9F9F9;border-radius: 5px;margin: 10px 0 0 0; color: #797979; font-size: 13px; line-height: 1.5;}

@@ -440,9 +440,9 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 				),
 				'desc' => html( 'a', array( 'class' => 'save-template button button-primary field_dependent' ), __( 'Save', 'gofetch-wpjm' ) ),
 				'tip'  => __( 'Specify a template name and and save your import setup. Templates can be loaded later and can also be used on scheduled imports.', 'gofetch-wpjm' )
-							 . '<br/><br/>' . __( 'Some template name examples: <em>my fulltime jobs</em>, <em>my tech jobs</em>, <em>my big salary jobs</em>, etc.', 'gofetch-wpjm' ),
+								. '<br/><br/>' . __( 'Some template name examples: <em>my fulltime jobs</em>, <em>my tech jobs</em>, <em>my big salary jobs</em>, etc.', 'gofetch-wpjm' ),
 				'value'  => ! empty( $_POST['template_name'] ) ? sanitize_text_field( $_POST['template_name'] ) : 'my-rss-feed',
- 				'tr'     => 'temp-tr-hide tr-template-name',
+				'tr'     => 'temp-tr-hide tr-template-name',
 			),
 		);
 
@@ -455,9 +455,9 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 				'choices' => apply_filters( 'goft_wpjm_recurrence_options', array(
 					'hourly'      => __( 'Hourly', 'gofetch-wpjm' ),
 					'twice_daily' => __( 'Every 12 Hours', 'gofetch-wpjm' ),
-					'daily'       => __( 'Day', 'gofetch-wpjm' ),
-					'weekly'      => __( 'Week', 'gofetch-wpjm' ),
-					'monthly'     => __( 'Month', 'gofetch-wpjm' ),
+					'daily'       => __( 'Daily', 'gofetch-wpjm' ),
+					'weekly'      => __( 'Weekly', 'gofetch-wpjm' ),
+					'monthly'     => __( 'Monthly', 'gofetch-wpjm' ),
 				)),
 				'extra' => array(
 					'class' => 'schedule-options schedule-recurrence auto-schedule-toggle',
