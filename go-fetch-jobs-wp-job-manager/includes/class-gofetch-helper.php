@@ -137,6 +137,7 @@ class GoFetch_Helper {
 	 */
 	public static function remove_slashes( $string ) {
 		$string = implode( '', explode( '\\', $string ) );
+		if ( ! $string ) return $string;
 		return stripslashes( trim( $string ) );
 	}
 

@@ -1,8 +1,15 @@
-1.8.4.8.1
+1.8.4.9.1
 changes
+	- Security update
+
+1.8.4.9
+changes
+	- Added support for Jooble Affiliate API
 	- Updated Freemius SDK
 fixes
+	- Jooble public API not working
 	- Fixed PHP warnings
+	- Fixed fatal error triggered when other plugins that share the scbFramework were active
 
 1.8.4.8
 Changes:

@@ -2,7 +2,7 @@
 /**
  * Admin screen with metaboxes base class.
  */
-abstract class scbBoxesPage extends scbAdminPage {
+abstract class scbBcBoxesPage extends scbBcAdminPage {
 	/*
 		A box definition looks like this:
 		array( $slug, $title, $column );
@@ -15,14 +15,14 @@ abstract class scbBoxesPage extends scbAdminPage {
 	 * Constructor.
 	 *
 	 * @param string|bool $file (optional)
-	 * @param object $options (optional) A scbOptions object.
+	 * @param object $options (optional) A scbBcOptions object.
 	 *
 	 * @return void
 	 */
 	public function __construct( $file = false, $options = null ) {
 		parent::__construct( $file, $options );
 
-		scbUtil::add_uninstall_hook( $this->file, array( $this, 'uninstall' ) );
+		scbBcUtil::add_uninstall_hook( $this->file, array( $this, 'uninstall' ) );
 	}
 
 	/**

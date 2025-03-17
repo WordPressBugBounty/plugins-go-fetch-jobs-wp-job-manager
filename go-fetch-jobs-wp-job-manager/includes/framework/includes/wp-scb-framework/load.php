@@ -1,25 +1,25 @@
 <?php
 
-$GLOBALS['_scb_data'] = array( 60, __FILE__, array(
-	'scbUtil',
-	'scbOptions',
-	'scbForms',
-	'scbTable',
-	'scbWidget',
-	'scbAdminPage',
-	'scbBoxesPage',
-	'scbPostMetabox',
-	'scbCron',
-	'scbHooks',
+$GLOBALS['_scb_bc_data'] = array( 60, __FILE__, array(
+	'scbBcUtil',
+	'scbBcOptions',
+	'scbBcForms',
+	'scbBcTable',
+	'scbBcWidget',
+	'scbBcAdminPage',
+	'scbBcBoxesPage',
+	'scbBcPostMetabox',
+	'scbBcCron',
+	'scbBcHooks',
 ) );
 
-if ( ! class_exists( 'scbLoad4' ) ) :
+if ( ! class_exists( 'scbBcLoad' ) ) :
 /**
  * The main idea behind this class is to load the most recent version of the scb classes available.
  *
  * It waits until all plugins are loaded and then does some crazy hacks to make activation hooks work.
  */
-class scbLoad4 {
+class scbBcLoad {
 
 	private static $candidates = array();
 	private static $classes;
@@ -28,7 +28,7 @@ class scbLoad4 {
 	private static $loaded;
 
 	static function init( $callback = '' ) {
-		list( $rev, $file, $classes ) = $GLOBALS['_scb_data'];
+		list( $rev, $file, $classes ) = $GLOBALS['_scb_bc_data'];
 
 		self::$candidates[ $file ] = $rev;
 		self::$classes[ $file ] = $classes;
@@ -57,7 +57,7 @@ class scbLoad4 {
 			if ( dirname( dirname( plugin_basename( $file ) ) ) == $plugin_dir ) {
 				self::load( false );
 				call_user_func( $callback );
-				do_action( 'scb_activation_' . $plugin );
+				do_action( 'scb_bc_activation_' . $plugin );
 				break;
 			}
 		}
@@ -71,12 +71,16 @@ class scbLoad4 {
 		$path = dirname( $file ) . '/';
 
 		foreach ( self::$classes[ $file ] as $class_name ) {
+
 			if ( class_exists( $class_name ) ) {
 				continue;
 			}
 
 			$fpath = $path . substr( $class_name, 3 ) . '.php';
+			$fpath = str_replace( "/Bc", '/', $fpath );
+
 			if ( file_exists( $fpath ) ) {
+
 				include $fpath;
 				self::$loaded[] = $fpath;
 			}
@@ -97,9 +101,9 @@ class scbLoad4 {
 }
 endif;
 
-if ( ! function_exists( 'scb_init' ) ) :
-function scb_init( $callback = '' ) {
-	scbLoad4::init( $callback );
+if ( ! function_exists( 'scb_bc_init' ) ) :
+function scb_bc_init( $callback = '' ) {
+	scbBcLoad::init( $callback );
 }
 endif;
 

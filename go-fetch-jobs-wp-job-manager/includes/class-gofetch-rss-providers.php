@@ -722,11 +722,11 @@ class GoFetch_RSS_Providers {
                     ),
                     'desc'    => '<br/><small><strong>Note:</strong> Some countries might not have RSS feeds working. Check for any errors displayed below.</small>',
                 );
-                $output_field = scbForms::input( $field, array() ) . '<br/>';
+                $output_field = scbBcForms::input( $field, array() ) . '<br/>';
                 if ( isset( $data['region_param_domain'] ) ) {
                     echo html( 'p class="domain-param params opt-param-' . esc_attr( $field_name ) . '"', $output_field . '<input type="hidden" name="feed-param-' . esc_attr( $field_name ) . '">' );
                 } else {
-                    echo scbForms::input( $field, array() ) . '<br/>';
+                    echo scbBcForms::input( $field, array() ) . '<br/>';
                 }
             }
         }

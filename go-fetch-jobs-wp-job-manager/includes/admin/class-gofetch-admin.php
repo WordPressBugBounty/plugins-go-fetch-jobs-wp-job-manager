@@ -555,7 +555,7 @@ class GoFetch_Admin {
 			return;
 		}
 
-		if ( is_admin() && 'edit.php' === $pagenow && ! empty( $_GET['goft_provider'] ) && ( empty( $_GET['goft_imported_jobs'] ) || 2 !== (int) $_GET['goft_imported_jobs'] ) ) {
+		if ( is_admin() && 'edit.php' === $pagenow && ! empty( $_GET['providers_list'] ) && ! empty( $_GET['goft_provider'] ) && ( empty( $_GET['goft_imported_jobs'] ) || 2 !== (int) $_GET['goft_imported_jobs'] ) ) {
 
 			$providers = explode( ',', stripslashes( sanitize_text_field( $_GET['providers_list'] ) ) );
 			$values    = array_combine( range( 1, count( $providers ) ), $providers );
@@ -715,7 +715,7 @@ class GoFetch_Admin {
 	 * Admin notices.
 	 */
 	public function warnings() {
-		echo scb_admin_notice( sprintf( __( '<strong>%1$s</strong> was not found. Please install it first to be able to use <strong>%2$s</strong>.', 'gofetch-wpjm' ),  GoFetch_Jobs()->parent_plugin, 'Go Fetch Jobs' ), 'error' );
+		echo scb_bc_admin_notice( sprintf( __( '<strong>%1$s</strong> was not found. Please install it first to be able to use <strong>%2$s</strong>.', 'gofetch-wpjm' ),  GoFetch_Jobs()->parent_plugin, 'Go Fetch Jobs' ), 'error' );
 	}
 
 	public static function limited_plan_warn() {

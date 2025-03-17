@@ -63,7 +63,7 @@ class BC_SCB_Load {
 			if ( dirname( dirname( plugin_basename( $file ) ) ) == $plugin_dir ) {
 				self::load( false );
 				call_user_func( $callback );
-				do_action( 'scb_activation_' . $plugin );
+				do_action( 'scb_bc_activation_' . $plugin );
 				break;
 			}
 		}
@@ -101,12 +101,12 @@ endif;
 
 // __Initialize frameworks considering the latest revision.
 
-if ( ! function_exists( 'bc_scb_init' ) ) :
-function bc_scb_init( $callback = '' ) {
+if ( ! function_exists( 'bc_scb_bc_init' ) ) :
+function bc_scb_bc_init( $callback = '' ) {
 	BC_SCB_Load::init( $callback );
 
-	do_action( 'bc_scb_framework_loaded' );
+	do_action( 'bc_scb_bc_framework_loaded' );
 }
 endif;
 
-scb_init( 'bc_scb_init' );
+scb_bc_init( 'bc_scb_bc_init' );

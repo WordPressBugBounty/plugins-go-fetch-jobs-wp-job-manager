@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: WP Job Manager - Go Fetch Jobs
- * Version:     1.8.4.8.1
+ * Version:     1.8.4.9.1
  * Description: Instantly populate your WP Job Manager database using RSS job feeds from the most popular job sites.
  * Author:      Bruno Carreço
  * Plugin URI:  https://gofetchjobs.com
@@ -70,7 +70,7 @@ if ( function_exists( 'gfjwjm_fs' ) ) {
                 /**
                  * @var The plugin version.
                  */
-                public $version = '1.8.4.8.1';
+                public $version = '1.8.4.9.1';
 
                 /**
                  * @var The expected parent plugin/theme name.

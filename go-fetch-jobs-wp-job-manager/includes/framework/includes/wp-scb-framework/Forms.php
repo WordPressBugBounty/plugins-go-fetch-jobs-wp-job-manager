@@ -2,20 +2,20 @@
 /**
  * Data-aware form generator.
  */
-class scbForms {
+class scbBcForms {
 
 	const TOKEN = '%input%';
 
 	/**
 	 * Generates form field.
 	 *
-	 * @param array|scbFormField_I $args
+	 * @param array|scbBcFormField_I $args
 	 * @param mixed                $value
 	 *
 	 * @return string
 	 */
 	public static function input_with_value( $args, $value ) {
-		$field = scbFormField::create( $args );
+		$field = scbBcFormField::create( $args );
 
 		return $field->render( $value );
 	}
@@ -23,15 +23,15 @@ class scbForms {
 	/**
 	 * Generates form field.
 	 *
-	 * @param array|scbFormField_I $args
+	 * @param array|scbBcFormField_I $args
 	 * @param array                $formdata (optional)
 	 *
 	 * @return string
 	 */
 	public static function input( $args, $formdata = null ) {
-		$field = scbFormField::create( $args );
+		$field = scbBcFormField::create( $args );
 
-		return $field->render( scbForms::get_value( $args['name'], $formdata ) );
+		return $field->render( scbBcForms::get_value( $args['name'], $formdata ) );
 	}
 
 	/**
@@ -210,7 +210,7 @@ class scbForms {
 	/**
 	 * Given a list of fields, validate some data.
 	 *
-	 * @param array $fields    List of args that would be sent to scbForms::input()
+	 * @param array $fields    List of args that would be sent to scbBcForms::input()
 	 * @param array $data      (optional) The data to validate. Defaults to $_POST
 	 * @param array $to_update (optional) Existing data to populate. Necessary for nested values
 	 *
@@ -222,9 +222,9 @@ class scbForms {
 		}
 
 		foreach ( $fields as $field ) {
-			$value = scbForms::get_value( $field['name'], $data );
+			$value = scbBcForms::get_value( $field['name'], $data );
 
-			$fieldObj = scbFormField::create( $field );
+			$fieldObj = scbBcFormField::create( $field );
 
 			$value = $fieldObj->validate( $value );
 
@@ -326,9 +326,9 @@ class scbForms {
 
 
 /**
- * A wrapper for scbForms, containing the formdata.
+ * A wrapper for scbBcForms, containing the formdata.
  */
-class scbForm {
+class scbBcForm {
 	protected $data   = array();
 	protected $prefix = array();
 
@@ -355,14 +355,14 @@ class scbForm {
 	 *
 	 * @param string $path
 	 *
-	 * @return object A scbForm
+	 * @return object A scbBcForm
 	 */
 	public function traverse_to( $path ) {
-		$data = scbForms::get_value( $path, $this->data );
+		$data = scbBcForms::get_value( $path, $this->data );
 
 		$prefix = array_merge( $this->prefix, (array) $path );
 
-		return new scbForm( $data, $prefix );
+		return new scbBcForm( $data, $prefix );
 	}
 
 	/**
@@ -373,20 +373,20 @@ class scbForm {
 	 * @return string
 	 */
 	public function input( $args ) {
-		$value = scbForms::get_value( $args['name'], $this->data );
+		$value = scbBcForms::get_value( $args['name'], $this->data );
 
 		if ( ! empty( $this->prefix ) ) {
 			$args['name'] = array_merge( $this->prefix, (array) $args['name'] );
 		}
 
-		return scbForms::input_with_value( $args, $value );
+		return scbBcForms::input_with_value( $args, $value );
 	}
 }
 
 /**
  * Interface for form fields.
  */
-interface scbFormField_I {
+interface scbBcFormField_I {
 
 	/**
 	 * Generate the corresponding HTML for a field.
@@ -410,19 +410,19 @@ interface scbFormField_I {
 /**
  * Base class for form fields implementations.
  */
-abstract class scbFormField implements scbFormField_I {
+abstract class scbBcFormField implements scbBcFormField_I {
 
 	protected $args;
 
 	/**
 	 * Creates form field.
 	 *
-	 * @param array|scbFormField_I $args
+	 * @param array|scbBcFormField_I $args
 	 *
 	 * @return mixed false on failure or instance of form class
 	 */
 	public static function create( $args ) {
-		if ( is_a( $args, 'scbFormField_I' ) ) {
+		if ( is_a( $args, 'scbBcFormField_I' ) ) {
 			return $args;
 		}
 
@@ -447,8 +447,8 @@ abstract class scbFormField implements scbFormField_I {
 		$args = wp_parse_args( $args, array(
 			'desc'      => '',
 			'desc_pos'  => 'after',
-			'wrap'      => scbForms::TOKEN,
-			'wrap_each' => scbForms::TOKEN,
+			'wrap'      => scbBcForms::TOKEN,
+			'wrap_each' => scbBcForms::TOKEN,
 		) );
 
 		// depends on $args['desc']
@@ -458,19 +458,19 @@ abstract class scbFormField implements scbFormField_I {
 
 		switch ( $args['type'] ) {
 			case 'radio':
-				return new scbRadiosField( $args );
+				return new scbBcRadiosField( $args );
 			case 'select':
-				return new scbSelectField( $args );
+				return new scbBcSelectField( $args );
 			case 'checkbox':
 				if ( isset( $args['choices'] ) ) {
-					return new scbMultipleChoiceField( $args );
+					return new scbBcMultipleChoiceField( $args );
 				} else {
-					return new scbSingleCheckboxField( $args );
+					return new scbBcSingleCheckboxField( $args );
 				}
 			case 'custom':
-				return new scbCustomField( $args );
+				return new scbBcCustomField( $args );
 			default:
-				return new scbTextField( $args );
+				return new scbBcTextField( $args );
 		}
 	}
 
@@ -525,9 +525,9 @@ abstract class scbFormField implements scbFormField_I {
 			$this->_set_value( $args, $value );
 		}
 
-		$args['name'] = scbForms::get_name( $args['name'] );
+		$args['name'] = scbBcForms::get_name( $args['name'] );
 
-		return str_replace( scbForms::TOKEN, $this->_render( $args ), $this->wrap );
+		return str_replace( scbBcForms::TOKEN, $this->_render( $args ), $this->wrap );
 	}
 
 	/**
@@ -662,7 +662,7 @@ abstract class scbFormField implements scbFormField_I {
 /**
  * Text form field.
  */
-class scbTextField extends scbFormField {
+class scbBcTextField extends scbBcFormField {
 
 	/**
 	 * Sanitizes value.
@@ -695,7 +695,7 @@ class scbTextField extends scbFormField {
 			$args['extra']['id'] = $args['name'];
 		}
 
-		return scbFormField::_input_gen( $args );
+		return scbBcFormField::_input_gen( $args );
 	}
 
 	/**
@@ -714,7 +714,7 @@ class scbTextField extends scbFormField {
 /**
  * Base class for form fields with single choice.
  */
-abstract class scbSingleChoiceField extends scbFormField {
+abstract class scbBcSingleChoiceField extends scbBcFormField {
 
 	/**
 	 * Validates a value against a field.
@@ -777,7 +777,7 @@ abstract class scbSingleChoiceField extends scbFormField {
 /**
  * Dropdown field.
  */
-class scbSelectField extends scbSingleChoiceField {
+class scbBcSelectField extends scbBcSingleChoiceField {
 
 	/**
 	 * Generate the corresponding HTML for a field.
@@ -821,14 +821,14 @@ class scbSelectField extends scbSingleChoiceField {
 
 		$input = html( 'select', $args['extra'], $opts );
 
-		return scbFormField::add_label( $input, $args['desc'], $args['desc_pos'] );
+		return scbBcFormField::add_label( $input, $args['desc'], $args['desc_pos'] );
 	}
 }
 
 /**
  * Radio field.
  */
-class scbRadiosField extends scbSelectField {
+class scbBcRadiosField extends scbBcSelectField {
 
 	/**
 	 * Generate the corresponding HTML for a field.
@@ -848,7 +848,7 @@ class scbRadiosField extends scbSelectField {
 		foreach ( $args['choices'] as $value => $title ) {
 			$value = (string) $value;
 
-			$single_input = scbFormField::_checkbox( array(
+			$single_input = scbBcFormField::_checkbox( array(
 				'name'     => $args['name'],
 				'type'     => 'radio',
 				'value'    => $value,
@@ -857,17 +857,17 @@ class scbRadiosField extends scbSelectField {
 				'desc_pos' => 'after',
 			) );
 
-			$opts .= str_replace( scbForms::TOKEN, $single_input, $args['wrap_each'] );
+			$opts .= str_replace( scbBcForms::TOKEN, $single_input, $args['wrap_each'] );
 		}
 
-		return scbFormField::add_desc( $opts, $args['desc'], $args['desc_pos'] );
+		return scbBcFormField::add_desc( $opts, $args['desc'], $args['desc_pos'] );
 	}
 }
 
 /**
  * Checkbox field with multiple choices.
  */
-class scbMultipleChoiceField extends scbFormField {
+class scbBcMultipleChoiceField extends scbBcFormField {
 
 	/**
 	 * Validates a value against a field.
@@ -899,7 +899,7 @@ class scbMultipleChoiceField extends scbFormField {
 
 		$opts = '';
 		foreach ( $args['choices'] as $value => $title ) {
-			$single_input = scbFormField::_checkbox( array(
+			$single_input = scbBcFormField::_checkbox( array(
 				'name'     => $args['name'] . '[]',
 				'type'     => 'checkbox',
 				'value'    => $value,
@@ -908,10 +908,10 @@ class scbMultipleChoiceField extends scbFormField {
 				'desc_pos' => 'after',
 			) );
 
-			$opts .= str_replace( scbForms::TOKEN, $single_input, $args['wrap_each'] );
+			$opts .= str_replace( scbBcForms::TOKEN, $single_input, $args['wrap_each'] );
 		}
 
-		return scbFormField::add_desc( $opts, $args['desc'], $args['desc_pos'] );
+		return scbBcFormField::add_desc( $opts, $args['desc'], $args['desc_pos'] );
 	}
 
 	/**
@@ -930,7 +930,7 @@ class scbMultipleChoiceField extends scbFormField {
 /**
  * Checkbox field.
  */
-class scbSingleCheckboxField extends scbFormField {
+class scbBcSingleCheckboxField extends scbBcFormField {
 
 	/**
 	 * Validates a value against a field.
@@ -964,7 +964,7 @@ class scbSingleCheckboxField extends scbFormField {
 			$args['desc'] = str_replace( '[]', '', $args['value'] );
 		}
 
-		return scbFormField::_input_gen( $args );
+		return scbBcFormField::_input_gen( $args );
 	}
 
 	/**
@@ -983,7 +983,7 @@ class scbSingleCheckboxField extends scbFormField {
 /**
  * Wrapper field for custom callbacks.
  */
-class scbCustomField implements scbFormField_I {
+class scbBcCustomField implements scbBcFormField_I {
 
 	protected $args;
 

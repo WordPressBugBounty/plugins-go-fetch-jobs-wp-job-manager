@@ -172,7 +172,9 @@ class GoFetch_Dynamic_Settings extends GoFetch_Admin_Builder {
 		$expire_field = $goft_wpjm_options->setup_field_expiration;
 
 		// Decode any JSON encoded URL's
-		$settings['rss_feed_import'] = stripslashes( $settings['rss_feed_import'] );
+		if ( ! empty( $settings['rss_feed_import'] ) ) {
+			$settings['rss_feed_import'] = stripslashes( $settings['rss_feed_import'] );
+		}
 
 		// Always calculate a new expiry date.
 		if ( ! empty( $settings['meta'][ $expire_field ] ) ) {

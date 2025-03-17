@@ -2,7 +2,7 @@
 /**
  * Takes care of creating, updating and deleting database tables.
  */
-class scbTable {
+class scbBcTable {
 
 	/**
 	 * The table name.
@@ -37,11 +37,11 @@ class scbTable {
 		$this->columns = $columns;
 		$this->upgrade_method = $upgrade_method;
 
-		scb_register_table( $name );
+		scb_bc_register_table( $name );
 
 		if ( $file ) {
-			scbUtil::add_activation_hook( $file, array( $this, 'install' ) );
-			scbUtil::add_uninstall_hook( $file, array( $this, 'uninstall' ) );
+			scbBcUtil::add_activation_hook( $file, array( $this, 'install' ) );
+			scbBcUtil::add_uninstall_hook( $file, array( $this, 'uninstall' ) );
 		}
 	}
 
@@ -51,7 +51,7 @@ class scbTable {
 	 * @return void
 	 */
 	public function install() {
-		scb_install_table( $this->name, $this->columns, $this->upgrade_method );
+		scb_bc_install_table( $this->name, $this->columns, $this->upgrade_method );
 	}
 
 	/**
@@ -60,7 +60,7 @@ class scbTable {
 	 * @return void
 	 */
 	public function uninstall() {
-		scb_uninstall_table( $this->name );
+		scb_bc_uninstall_table( $this->name );
 	}
 }
 

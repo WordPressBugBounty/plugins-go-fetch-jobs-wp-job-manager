@@ -2,7 +2,7 @@
 /**
  * Automatic filter binding.
  */
-class scbHooks {
+class scbBcHooks {
 	private static $mangle_name;
 
 	/**

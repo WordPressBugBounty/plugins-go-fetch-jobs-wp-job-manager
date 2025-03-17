@@ -350,7 +350,7 @@ class BC_Framework_ToolTips {
 		if ( ! empty( $field['section_break'] ) ) {
 
 			return html( "tr class='" . implode( ' ', (array) $atts )  . " hr-break'",
-				html( "th colspan=3", scbForms::input( $field, $formdata ) )
+				html( "th colspan=3", scbBcForms::input( $field, $formdata ) )
 			);
 
 		} else  {
@@ -360,12 +360,12 @@ class BC_Framework_ToolTips {
 				return html( "tr class='" . implode( ' ', (array) $atts )  . " hr-break'",
 					html( "th scope='row'", '' ),
 					html( "td", '' ),
-					html( "td", scbForms::input( $field, $formdata ) )
+					html( "td", scbBcForms::input( $field, $formdata ) )
 				);
 
 			} else  {
 
-				return self::row_wrap( $field['title'], scbForms::input( $field, $formdata ), $tip, $atts );
+				return self::row_wrap( $field['title'], scbBcForms::input( $field, $formdata ), $tip, $atts );
 
 			}
 

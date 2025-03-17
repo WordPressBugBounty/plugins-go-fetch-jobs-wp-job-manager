@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Data-aware form generator.
  */
-class BC_Framework_Admin_page extends scbAdminPage {
+class BC_Framework_Admin_page extends scbBcAdminPage {
 
 	/**
 	 * This is where the page content goes.

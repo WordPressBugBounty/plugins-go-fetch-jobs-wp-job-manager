@@ -2,7 +2,7 @@
 /**
  * WP Cron job container.
  */
-class scbCron {
+class scbBcCron {
 	protected $schedule;
 	protected $interval;
 	protected $time;
@@ -53,7 +53,7 @@ class scbCron {
 		}
 
 		if ( $file && $this->schedule ) {
-			scbUtil::add_activation_hook( $file, array( $this, 'reset' ) );
+			scbBcUtil::add_activation_hook( $file, array( $this, 'reset' ) );
 			register_deactivation_hook( $file, array( $this, 'unschedule' ) );
 		}
 

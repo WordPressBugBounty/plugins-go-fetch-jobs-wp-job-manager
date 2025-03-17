@@ -244,6 +244,13 @@ $options = array(
 	'jooble_feed_default_salary_to'   => '',
 	'jooble_feed_default_search_mode' => '1',
 	'jooble_block_search_indexing'    => false,
+	// Jooble affiliate vars
+	'jooble_aff_api_key'               => '',
+	'jooble_feed_default_job_type'     => array(),
+	'jooble_feed_default_max_days_old' => '',
+	'jooble_feed_default_remote_only'  => '',
+	'jooble_feed_default_salary_rate'  => '3',
+	'jooble_feed_default_category'     => array(),
 
 	// JuJu
 	'juju_publisher_id'          => '',
@@ -273,4 +280,4 @@ $options = array(
 // Merge options with the active module.
 $options = wp_parse_args( $gofj_module_settings['options'], $options );
 
-$GLOBALS['goft_wpjm_options'] = new scbOptions( 'goft_wpjm_options', __FILE__, $options );
+$GLOBALS['goft_wpjm_options'] = new scbBcOptions( 'goft_wpjm_options', __FILE__, $options );

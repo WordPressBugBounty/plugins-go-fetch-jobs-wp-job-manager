@@ -5,7 +5,7 @@ Tags: rss, feed, jobs, WP Job Manager, automate
 Requires at least: 5.5
 Requires PHP: 7.4.1
 Tested up to: 6.7
-Stable tag: 1.8.4.8
+Stable tag: 1.8.4.9.1
 
 Instantly populate your WP Job Manager database using RSS job feeds from the most popular job sites or load XML/JSON files (premium only).
 
@@ -93,11 +93,18 @@ If the premium plan is not activated immediately please try again later since it
 
 == Changelog ==
 
-1.8.4.8.1
+1.8.4.9.1
 changes
+	- Security update
+
+1.8.4.9
+changes
+	- Added support for Jooble Affiliate API
 	- Updated Freemius SDK
 fixes
+	- Jooble public API not working
 	- Fixed PHP warnings
+	- Fixed fatal error triggered when other plugins that share the scbFramework were active
 
 1.8.4.8
 Changes:

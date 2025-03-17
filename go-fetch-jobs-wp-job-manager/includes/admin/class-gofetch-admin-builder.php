@@ -138,7 +138,7 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 		echo html( 'div class="secondary-container provider-credits-info"', html( 'span class="dashicons-before dashicons-megaphone" style="padding-right: 8px;"', '' ) . html( 'div', __( 'Please note, all imported jobs belong to the respective providers. Always make sure they are properly credited.', 'gofetch-wpjm' ) ) );
 
 		if ( ! gfjwjm_fs()->can_use_premium_code() ) {
-			echo scb_admin_notice( sprintf( html( 'span class="dashicons dashicons-warning" style=""', '&nbsp;' ) . ' ' . __( 'If you need further features like more job providers, a custom feed builder, featuring imported jobs, smart categories assign, schedule imports, and more, please upgrade to a <a href="%1$s">premium plan</a>.', 'gofetch-wpjm' ), esc_url( gfjwjm_fs()->get_upgrade_url() ) ) );
+			echo scb_bc_admin_notice( sprintf( html( 'span class="dashicons dashicons-warning" style=""', '&nbsp;' ) . ' ' . __( 'If you need further features like more job providers, a custom feed builder, featuring imported jobs, smart categories assign, schedule imports, and more, please upgrade to a <a href="%1$s">premium plan</a>.', 'gofetch-wpjm' ), esc_url( gfjwjm_fs()->get_upgrade_url() ) ) );
 		}
 
 		$templates = GoFetch_Helper::get_sanitized_templates();
@@ -467,7 +467,7 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 				'default' => 'daily',
 			);
 
-			$additional_fields = scbForms::input( $field, array() );
+			$additional_fields = scbBcForms::input( $field, array() );
 
 			$additional_fields .= html( 'input', array(
 				'type'        => 'text',
@@ -1000,7 +1000,7 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 			if ( ! empty( $_POST['templates_list'] ) ) {
 				$this->delete_template( sanitize_text_field( $_POST['templates_list'] ) );
 			} else {
-				echo scb_admin_notice( __( 'Please select a template to delete.', 'gofetch-wpjm' ), 'error' );
+				echo scb_bc_admin_notice( __( 'Please select a template to delete.', 'gofetch-wpjm' ), 'error' );
 			}
 			return;
 
@@ -1012,7 +1012,7 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 		} else  {
 
 			if ( empty( $_POST['template_name'] ) ) {
-				echo scb_admin_notice( __( 'Please name your template.', 'gofetch-wpjm' ), 'error' );
+				echo scb_bc_admin_notice( __( 'Please name your template.', 'gofetch-wpjm' ), 'error' );
 				return;
 			}
 
@@ -1116,14 +1116,14 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 		}
 
 		if ( empty( $items ) ) {
-			echo scb_admin_notice( __( "Sorry, couldn't find anything to import.", 'gofetch-wpjm' ), 'error' );
+			echo scb_bc_admin_notice( __( "Sorry, couldn't find anything to import.", 'gofetch-wpjm' ), 'error' );
 			return;
 		}
 
 		$mappings_check = apply_filters( 'goft_wpjm_import_mappings_check', true, $params['field_mappings'], $items, $params['content_type'] );
 
 		if ( is_wp_error( $mappings_check ) ) {
-			echo scb_admin_notice( __( "<strong>IMPORT ERROR</strong>", 'gofetch-wpjm' ) . '<br/>' . $mappings_check->get_error_message(), 'error' );
+			echo scb_bc_admin_notice( __( "<strong>IMPORT ERROR</strong>", 'gofetch-wpjm' ) . '<br/>' . $mappings_check->get_error_message(), 'error' );
 			return;
 		}
 
@@ -1249,7 +1249,7 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 		$templates = GoFetch_Helper::get_sanitized_templates();
 
 		if ( empty( $templates[ $name ] ) ) {
-			echo scb_admin_notice( __( 'Could not delete template. Template name not found.', 'gofetch-wpjm' ) );
+			echo scb_bc_admin_notice( __( 'Could not delete template. Template name not found.', 'gofetch-wpjm' ) );
 			return;
 		}
 
@@ -1258,7 +1258,7 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 
 		$goft_wpjm_options->templates = $templates;
 
-		echo scb_admin_notice( __( 'The template was deleted.', 'gofetch-wpjm' ) );
+		echo scb_bc_admin_notice( __( 'The template was deleted.', 'gofetch-wpjm' ) );
 	}
 
 	/**
@@ -1494,7 +1494,7 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 
 		$class .= ' goft-stats-container';
 
-		echo scb_admin_notice( $msg, $class );
+		echo scb_bc_admin_notice( $msg, $class );
 	}
 
 		/**
@@ -1510,7 +1510,7 @@ class GoFetch_Admin_Builder extends BC_Framework_Admin_page {
 
 		$msg = wp_kses_post( $stats['new_schedule'] );
 
-		echo scb_admin_notice( $msg, $class );
+		echo scb_bc_admin_notice( $msg, $class );
 	}
 
 }

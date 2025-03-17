@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Base class for the menu page.
  *
- * Streamlined version of Scribu's scbFramework scbAdminPage class.
+ * Streamlined version of Scribu's scbFramework scbBcAdminPage class.
  */
 abstract class BC_Framework_Plugin_Browser_Menu_Page {
 

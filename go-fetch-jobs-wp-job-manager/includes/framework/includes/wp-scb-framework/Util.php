@@ -2,7 +2,7 @@
 /**
  * Various utilities.
  */
-class scbUtil {
+class scbBcUtil {
 
 	/**
 	 * Force script enqueue.
@@ -49,7 +49,7 @@ class scbUtil {
 	}
 
 	/**
-	 * Enable delayed plugin activation. To be used with scb_init()
+	 * Enable delayed plugin activation. To be used with scb_bc_init()
 	 *
 	 * @param string $plugin
 	 * @param string|array $callback
@@ -60,7 +60,7 @@ class scbUtil {
 		if ( defined( 'SCB_LOAD_MU' ) ) {
 			register_activation_hook( $plugin, $callback );
 		} else {
-			add_action( 'scb_activation_' . plugin_basename( $plugin ), $callback );
+			add_action( 'scb_bc_activation_' . plugin_basename( $plugin ), $callback );
 		}
 	}
 
@@ -73,7 +73,7 @@ class scbUtil {
 	 * @return void
 	 */
 	public static function do_activation( $plugin ) {
-		do_action( 'scb_activation_' . plugin_basename( $plugin ) );
+		do_action( 'scb_bc_activation_' . plugin_basename( $plugin ) );
 	}
 
 	/**
@@ -172,8 +172,8 @@ class scbUtil {
 	 * Transform a list of objects into an associative array.
 	 *
 	 * @deprecated r41
-	 * @deprecated Use scb_list_fold()
-	 * @see scb_list_fold()
+	 * @deprecated Use scb_bc_list_fold()
+	 * @see scb_bc_list_fold()
 	 *
 	 * @param array $objects
 	 * @param string $key
@@ -182,8 +182,8 @@ class scbUtil {
 	 * @return array
 	 */
 	public static function objects_to_assoc( $objects, $key, $value ) {
-		_deprecated_function( __CLASS__ . '::' . __FUNCTION__, 'r41', 'scb_list_fold()' );
-		return scb_list_fold( $objects, $key, $value );
+		_deprecated_function( __CLASS__ . '::' . __FUNCTION__, 'r41', 'scb_bc_list_fold()' );
+		return scb_bc_list_fold( $objects, $key, $value );
 	}
 
 	/**
@@ -231,7 +231,7 @@ class scbUtil {
  *
  * @return string
  */
-function scb_admin_notice( $msg, $class = 'updated' ) {
+function scb_bc_admin_notice( $msg, $class = 'updated' ) {
 	return html( "div class='$class fade'", html( "p", $msg ) );
 }
 
@@ -244,7 +244,7 @@ function scb_admin_notice( $msg, $class = 'updated' ) {
  *
  * @return array
  */
-function scb_list_fold( $list, $key, $value ) {
+function scb_bc_list_fold( $list, $key, $value ) {
 	$r = array();
 
 	if ( is_array( reset( $list ) ) ) {
@@ -268,7 +268,7 @@ function scb_list_fold( $list, $key, $value ) {
  *
  * @return array
  */
-function scb_list_group_by( $list, $fn ) {
+function scb_bc_list_group_by( $list, $fn ) {
 	$groups = array();
 
 	foreach ( $list as $item ) {
@@ -294,7 +294,7 @@ function scb_list_group_by( $list, $fn ) {
  *
  * @return void
  */
-function scb_register_table( $key, $name = false ) {
+function scb_bc_register_table( $key, $name = false ) {
 	global $wpdb;
 
 	if ( ! $name ) {
@@ -308,13 +308,13 @@ function scb_register_table( $key, $name = false ) {
 /**
  * Runs the SQL query for installing/upgrading a table.
  *
- * @param string $key The key used in scb_register_table().
+ * @param string $key The key used in scb_bc_register_table().
  * @param string $columns The SQL columns for the CREATE TABLE statement.
  * @param array $opts (optional) Various other options.
  *
  * @return void
  */
-function scb_install_table( $key, $columns, $opts = array() ) {
+function scb_bc_install_table( $key, $columns, $opts = array() ) {
 	global $wpdb;
 
 	$full_table_name = $wpdb->$key;
@@ -356,11 +356,11 @@ function scb_install_table( $key, $columns, $opts = array() ) {
 /**
  * Runs the SQL query for uninstalling a table.
  *
- * @param string $key The key used in scb_register_table().
+ * @param string $key The key used in scb_bc_register_table().
  *
  * @return void
  */
-function scb_uninstall_table( $key ) {
+function scb_bc_uninstall_table( $key ) {
 	global $wpdb;
 
 	$wpdb->query( "DROP TABLE IF EXISTS " . $wpdb->$key );
@@ -436,7 +436,7 @@ endif;
  *
  * @return array
  */
-function scb_get_query_flags( $wp_query = null ) {
+function scb_bc_get_query_flags( $wp_query = null ) {
 	if ( ! $wp_query ) {
 		$wp_query = $GLOBALS['wp_query'];
 	}

@@ -2,7 +2,7 @@
 /**
  * Administration page base class.
  */
-abstract class scbAdminPage {
+abstract class scbBcAdminPage {
 	/** Page args
 	 * $page_title string (mandatory)
 	 * $parent (string)  (default: options-general.php)
@@ -27,7 +27,7 @@ abstract class scbAdminPage {
 	// Created at page init
 	protected $pagehook;
 
-	// scbOptions object holder
+	// scbBcOptions object holder
 	// Normally, it's used for storing formdata
 	protected $options;
 	protected $option_name;
@@ -46,7 +46,7 @@ abstract class scbAdminPage {
 	 *
 	 * @param string $class
 	 * @param string $file
-	 * @param object $options (optional) A scbOptions object.
+	 * @param object $options (optional) A scbBcOptions object.
 	 *
 	 * @return bool
 	 */
@@ -117,12 +117,12 @@ abstract class scbAdminPage {
 	 * Constructor.
 	 *
 	 * @param string|bool $file (optional)
-	 * @param object $options (optional) A scbOptions object.
+	 * @param object $options (optional) A scbBcOptions object.
 	 *
 	 * @return void
 	 */
 	public function __construct( $file = false, $options = null ) {
-		if ( is_a( $options, 'scbOptions' ) ) {
+		if ( is_a( $options, 'scbBcOptions' ) ) {
 			$this->options = $options;
 		}
 
@@ -259,7 +259,7 @@ abstract class scbAdminPage {
 			$msg = __( 'Settings <strong>saved</strong>.', $this->textdomain );
 		}
 
-		echo scb_admin_notice( $msg, $class );
+		echo scb_bc_admin_notice( $msg, $class );
 	}
 
 
@@ -288,7 +288,7 @@ abstract class scbAdminPage {
 	}
 
 	/**
-	 * Mimics scbForms::form_wrap()
+	 * Mimics scbBcForms::form_wrap()
 	 *
 	 * $this->form_wrap( $content );  // generates a form with a default submit button
 	 *
@@ -300,7 +300,7 @@ abstract class scbAdminPage {
 	 *      'name' => 'action',
 	 *  ) );
 	 *
-	 * @see scbForms::form_wrap()
+	 * @see scbBcForms::form_wrap()
 	 *
 	 * @param string               $content
 	 * @param boolean|string|array $submit_button (optional)
@@ -321,7 +321,7 @@ abstract class scbAdminPage {
 			$content    .= call_user_func_array( array( $this, 'submit_button' ), $button_args );
 		}
 
-		return scbForms::form_wrap( $content, $this->nonce );
+		return scbBcForms::form_wrap( $content, $this->nonce );
 	}
 
 	/**
@@ -389,9 +389,9 @@ abstract class scbAdminPage {
 	}
 
 	/**
-	 * Mimic scbForms inheritance.
+	 * Mimic scbBcForms inheritance.
 	 *
-	 * @see scbForms
+	 * @see scbBcForms
 	 *
 	 * @param string $method
 	 * @param array  $args
@@ -409,7 +409,7 @@ abstract class scbAdminPage {
 			}
 		}
 
-		return call_user_func_array( array( 'scbForms', $method ), $args );
+		return call_user_func_array( array( 'scbBcForms', $method ), $args );
 	}
 
 	/**

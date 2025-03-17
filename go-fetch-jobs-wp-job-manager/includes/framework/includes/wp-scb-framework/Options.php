@@ -2,7 +2,7 @@
 /**
  * Container for an array of options.
  */
-class scbOptions {
+class scbBcOptions {
 
 	/**
 	 * The option name.
@@ -36,8 +36,8 @@ class scbOptions {
 		$this->defaults = $defaults;
 
 		if ( $file ) {
-			scbUtil::add_activation_hook( $file, array( $this, '_activation' ) );
-			scbUtil::add_uninstall_hook( $file, array( $this, 'delete' ) );
+			scbBcUtil::add_activation_hook( $file, array( $this, '_activation' ) );
+			scbBcUtil::add_uninstall_hook( $file, array( $this, 'delete' ) );
 		}
 	}
 
@@ -61,7 +61,7 @@ class scbOptions {
 	public function get( $field = null, $default = null ) {
 		$data = array_merge( $this->defaults, (array) get_option( $this->key, array() ) );
 
-		return scbForms::get_value( $field, $data, $default );
+		return scbBcForms::get_value( $field, $data, $default );
 	}
 
 	/**
@@ -72,7 +72,7 @@ class scbOptions {
 	 * @return mixed Whatever is in those fields.
 	 */
 	public function get_defaults( $field = null ) {
-		return scbForms::get_value( $field, $this->defaults );
+		return scbBcForms::get_value( $field, $this->defaults );
 	}
 
 	/**

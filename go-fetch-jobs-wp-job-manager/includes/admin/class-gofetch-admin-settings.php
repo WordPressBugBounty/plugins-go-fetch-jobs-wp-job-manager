@@ -152,7 +152,7 @@ class GoFetch_Admin_Settings extends BC_Framework_Tabs_Page {
         }
         $value = '';
         if ( !empty( $_POST['bc_screen_options'] ) ) {
-            $value = scb_recursive_sanitize_text_field( wp_unslash( $_POST['bc_screen_options'] ) );
+            $value = scb_bc_recursive_sanitize_text_field( wp_unslash( $_POST['bc_screen_options'] ) );
         }
         return $value;
     }
@@ -568,7 +568,7 @@ class GoFetch_Admin_Settings extends BC_Framework_Tabs_Page {
             }
             $msg .= __( 'Settings <strong>saved</strong>.', esc_html( $this->textdomain ) );
         }
-        echo scb_admin_notice( $msg, $class );
+        echo scb_bc_admin_notice( $msg, $class );
     }
 
     /**

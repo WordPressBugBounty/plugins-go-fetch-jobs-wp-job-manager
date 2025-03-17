@@ -50,7 +50,7 @@ abstract class BC_Framework_Tabs_Page extends BC_Framework_Admin_page {
 		foreach ( $this->tab_sections[ $_POST['action'] ] as $section )
 			$form_fields = array_merge( $form_fields, $section['fields'] );
 
-		$to_update = scbForms::validate_post_data( $form_fields, null, $this->options->get() );
+		$to_update = scbBcForms::validate_post_data( $form_fields, null, $this->options->get() );
 
 		$this->options->update( $to_update );
 
@@ -71,7 +71,7 @@ abstract class BC_Framework_Tabs_Page extends BC_Framework_Admin_page {
 			$active_tab = key( $tabs );
 		}
 
-		$current_url = scbUtil::get_current_url();
+		$current_url = scbBcUtil::get_current_url();
 
 		echo '<h3 class="nav-tab-wrapper">';
 		foreach ( $tabs as $tab_id => $tab_title ) {

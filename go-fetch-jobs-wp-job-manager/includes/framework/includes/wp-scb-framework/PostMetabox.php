@@ -2,7 +2,7 @@
 /**
  * Class that creates metaboxes on the post editing page.
  */
-class scbPostMetabox {
+class scbBcPostMetabox {
 
 	/**
 	 * Metabox ID.
@@ -172,7 +172,7 @@ class scbPostMetabox {
 			$output .= $this->table_row( $row, $formdata, $errors );
 		}
 
-		$output = scbForms::table_wrap( $output );
+		$output = scbBcForms::table_wrap( $output );
 
 		return $output;
 	}
@@ -187,7 +187,7 @@ class scbPostMetabox {
 	 * @return string
 	 */
 	public function table_row( $row, $formdata, $errors = array() ) {
-		$input = scbForms::input( $row, $formdata );
+		$input = scbBcForms::input( $row, $formdata );
 
 		// If row has an error, highlight it
 		$style = ( in_array( $row['name'], $errors ) ) ? 'style="background-color: #FFCCCC"' : '';
@@ -211,7 +211,7 @@ class scbPostMetabox {
 		$class .= ' inline';
 
 		foreach ( (array) $notices as $notice ) {
-			echo scb_admin_notice( $notice, $class );
+			echo scb_bc_admin_notice( $notice, $class );
 		}
 	}
 
@@ -276,7 +276,7 @@ class scbPostMetabox {
 	protected function save( $post_id ) {
 		$form_fields = $this->form_fields();
 
-		$to_update = scbForms::validate_post_data( $form_fields );
+		$to_update = scbBcForms::validate_post_data( $form_fields );
 
 		// Filter data
 		$to_update = $this->before_save( $to_update, $post_id );

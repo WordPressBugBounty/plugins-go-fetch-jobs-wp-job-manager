@@ -1,8 +1,8 @@
 <?php
 /**
- * Adds compatibility methods between WP_Widget and scbForms.
+ * Adds compatibility methods between WP_Widget and scbBcForms.
  */
-abstract class scbWidget extends WP_Widget {
+abstract class scbBcWidget extends WP_Widget {
 
 	/**
 	 * Widget defaults.
@@ -14,7 +14,7 @@ abstract class scbWidget extends WP_Widget {
 	 * Widgets to register.
 	 * @var array
 	 */
-	private static $scb_widgets = array();
+	private static $scb_bc_widgets = array();
 
 	/**
 	 * Initializes widget.
@@ -26,13 +26,13 @@ abstract class scbWidget extends WP_Widget {
 	 * @return void
 	 */
 	public static function init( $class, $file = '', $base = '' ) {
-		self::$scb_widgets[] = $class;
+		self::$scb_bc_widgets[] = $class;
 
-		add_action( 'widgets_init', array( __CLASS__, '_scb_register' ) );
+		add_action( 'widgets_init', array( __CLASS__, '_scb_bc_register' ) );
 
 		// for auto-uninstall
-		if ( $file && $base && class_exists( 'scbOptions' ) ) {
-			new scbOptions( "widget_$base", $file );
+		if ( $file && $base && class_exists( 'scbBcOptions' ) ) {
+			new scbBcOptions( "widget_$base", $file );
 		}
 	}
 
@@ -41,8 +41,8 @@ abstract class scbWidget extends WP_Widget {
 	 *
 	 * @return void
 	 */
-	public static function _scb_register() {
-		foreach ( self::$scb_widgets as $widget ) {
+	public static function _scb_bc_register() {
+		foreach ( self::$scb_bc_widgets as $widget ) {
 			register_widget( $widget );
 		}
 	}
@@ -97,7 +97,7 @@ abstract class scbWidget extends WP_Widget {
 	protected function input( $args, $formdata = array() ) {
 		$prefix = array( 'widget-' . $this->id_base, $this->number );
 
-		$form = new scbForm( $formdata, $prefix );
+		$form = new scbBcForm( $formdata, $prefix );
 
 		// Add default class
 		if ( ! isset( $args['extra'] ) && 'text' == $args['type'] ) {
